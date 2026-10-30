@@ -161,8 +161,8 @@ export const AllServicesPage: React.FC<AllServicesPageProps> = ({ onBack, onSele
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search across all 38 insurance lines (e.g. Doctor, Marine, Workmen, Fire, Cyber, Car, Boiler)..."
-              className="w-full pl-11 pr-10 py-3.5 rounded-2xl bg-white text-sm text-brand-dark placeholder:text-brand-muted border border-brand-borderSubtle focus:outline-none focus:ring-2 focus:ring-brand-forest transition-all shadow-soft-sm"
+              placeholder="Search 38+ insurance lines (e.g. Health, Fire, Marine, Car)..."
+              className="w-full pl-11 pr-10 py-3.5 rounded-2xl bg-white text-base sm:text-sm text-brand-dark placeholder:text-brand-muted border border-brand-borderSubtle focus:outline-none focus:ring-2 focus:ring-brand-forest transition-all shadow-soft-sm"
             />
             {searchQuery && (
               <button

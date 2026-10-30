@@ -26,52 +26,52 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onAssistanceClick })
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
             {/* Former Name Transition Pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-accentGreen text-brand-forest border border-brand-accentGreenBorder mb-6 shadow-soft-sm">
-              <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse" />
-              <span className="text-xs font-semibold tracking-wide">
+            <div className="inline-flex flex-wrap items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-accentGreen text-brand-forest border border-brand-accentGreenBorder mb-5 sm:mb-6 shadow-soft-sm max-w-full">
+              <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse flex-shrink-0" />
+              <span className="text-[11px] sm:text-xs font-semibold tracking-wide">
                 Formerly <span className="font-bold underline decoration-brand-forest/40 underline-offset-2">Mehta Associates</span> • Now <span className="font-bold">Secure With Mehta</span>
               </span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-brand-dark tracking-tight leading-[1.12] mb-6">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-brand-dark tracking-tight leading-[1.15] mb-4 sm:mb-6">
               Protection for What Matters.{' '}
               <span className="text-brand-forest inline-block relative">
                 Guidance You Can Trust.
-                <span className="absolute left-0 bottom-1 w-full h-2.5 bg-brand-accentYellow/70 -z-10 rounded-sm" />
+                <span className="absolute left-0 bottom-1 w-full h-2 sm:h-2.5 bg-brand-accentYellow/70 -z-10 rounded-sm" />
               </span>
             </h1>
 
             {/* Sub-headline */}
-            <p className="text-lg sm:text-xl text-brand-muted leading-relaxed mb-6 max-w-2xl font-normal">
+            <p className="text-base sm:text-lg lg:text-xl text-brand-muted leading-relaxed mb-5 sm:mb-6 max-w-2xl font-normal">
               {SITE_CONFIG.hero.subheadline} From family health and life policies to complex factory, warehouse, and commercial liability portfolios.
             </p>
 
             {/* Transition Quotation Box */}
-            <div className="mb-8 p-3.5 sm:p-4 rounded-2xl bg-brand-accentGreenLight/90 border border-brand-accentGreenBorder max-w-2xl flex items-start gap-3 shadow-soft-sm">
-              <span className="text-2xl text-brand-forest leading-none font-serif select-none mt-0.5">“</span>
+            <div className="mb-6 sm:mb-8 p-3.5 sm:p-4 rounded-2xl bg-brand-accentGreenLight/90 border border-brand-accentGreenBorder max-w-2xl flex items-start gap-3 shadow-soft-sm">
+              <span className="text-xl sm:text-2xl text-brand-forest leading-none font-serif select-none mt-0.5">“</span>
               <p className="text-xs sm:text-sm text-brand-dark/90 italic leading-relaxed">
                 Earlier known as <strong>Mehta Associates</strong>, our firm is now <strong>Secure With Mehta</strong> — carrying forward 39 years of trusted, personalized insurance guidance under our renewed identity.
               </p>
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-10">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mb-8 sm:mb-10">
               <button
                 type="button"
                 onClick={onAssistanceClick}
-                className="inline-flex items-center justify-center gap-3 px-7 py-4 rounded-xl bg-brand-forest hover:bg-brand-forestHover text-white font-semibold text-base shadow-soft hover:shadow-soft-lg transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-forest group"
+                className="inline-flex items-center justify-center gap-3 px-6 py-3.5 sm:px-7 sm:py-4 rounded-xl bg-brand-forest hover:bg-brand-forestHover active:bg-brand-forestHover text-white font-semibold text-sm sm:text-base shadow-soft hover:shadow-soft-lg transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-forest group"
               >
                 <span>Get Insurance Assistance</span>
-                <ArrowRight className="w-5 h-5 text-brand-accentYellow group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-brand-accentYellow group-hover:translate-x-1 transition-transform" />
               </button>
 
               <button
                 type="button"
                 onClick={onExploreClick}
-                className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-white hover:bg-brand-accentGreenLight text-brand-dark font-semibold text-base border border-brand-borderSubtle hover:border-brand-accentGreenBorder transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-forest"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 sm:px-6 sm:py-4 rounded-xl bg-white hover:bg-brand-accentGreenLight active:bg-brand-accentGreen text-brand-dark font-semibold text-sm sm:text-base border border-brand-borderSubtle hover:border-brand-accentGreenBorder transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-forest"
               >
-                <FileText className="w-5 h-5 text-brand-forest" />
+                <FileText className="w-4 h-4 sm:w-5 sm:h-5 text-brand-forest" />
                 <span>Explore Services</span>
               </button>
             </div>

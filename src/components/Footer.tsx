@@ -8,7 +8,7 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-brand-darker text-white pt-16 pb-12 border-t border-brand-borderSubtle/10">
+    <footer className="bg-brand-darker text-white pt-16 pb-28 sm:pb-14 border-t border-brand-borderSubtle/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Footer Grid */}

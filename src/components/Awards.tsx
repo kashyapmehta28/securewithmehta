@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Trophy, ZoomIn, X, ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
 
@@ -73,6 +73,8 @@ const AWARDS_GALLERY: AwardPhoto[] = [
 
 export const Awards: React.FC = () => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const touchStartXRef = useRef<number | null>(null);
+  const touchEndXRef = useRef<number | null>(null);
 
   const handlePrev = useCallback(() => {
     if (selectedIndex === null) return;
@@ -83,6 +85,21 @@ export const Awards: React.FC = () => {
     if (selectedIndex === null) return;
     setSelectedIndex((prev) => (prev! === AWARDS_GALLERY.length - 1 ? 0 : prev! + 1));
   }, [selectedIndex]);
+
+  const handleModalTouchStart = (e: React.TouchEvent) => {
+    touchStartXRef.current = e.targetTouches[0].clientX;
+  };
+  const handleModalTouchMove = (e: React.TouchEvent) => {
+    touchEndXRef.current = e.targetTouches[0].clientX;
+  };
+  const handleModalTouchEnd = () => {
+    if (touchStartXRef.current === null || touchEndXRef.current === null) return;
+    const diff = touchStartXRef.current - touchEndXRef.current;
+    if (diff > 40) handleNext();
+    if (diff < -40) handlePrev();
+    touchStartXRef.current = null;
+    touchEndXRef.current = null;
+  };
 
   // Keyboard navigation for lightbox
   useEffect(() => {
@@ -171,26 +188,29 @@ export const Awards: React.FC = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             onClick={() => setSelectedIndex(null)}
-            className="fixed inset-0 z-50 bg-black/92 backdrop-blur-md flex flex-col items-center justify-between p-4 sm:p-6"
+            onTouchStart={handleModalTouchStart}
+            onTouchMove={handleModalTouchMove}
+            onTouchEnd={handleModalTouchEnd}
+            className="fixed inset-0 z-50 bg-black/92 backdrop-blur-md flex flex-col items-center justify-between p-3 sm:p-6"
           >
             {/* Top Bar: Counter & Close Button */}
             <div 
-              className="w-full max-w-6xl flex items-center justify-between text-white pt-2 pb-3"
+              className="w-full max-w-6xl flex items-center justify-between text-white pt-1 pb-2 sm:pb-3"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex items-center gap-2">
-                <span className="px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-sm text-xs font-bold tracking-wider text-white/90 border border-white/10">
+                <span className="px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm text-xs font-bold tracking-wider text-white/90 border border-white/10">
                   {selectedIndex + 1} / {AWARDS_GALLERY.length}
                 </span>
                 <span className="hidden sm:inline text-xs text-white/60">
-                  Use arrow keys or buttons to browse
+                  Swipe or use arrow keys to browse
                 </span>
               </div>
 
               <button
                 type="button"
                 onClick={() => setSelectedIndex(null)}
-                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/15 hover:bg-white/25 text-white transition-colors border border-white/15 focus:outline-none focus:ring-2 focus:ring-brand-accentYellow"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/15 hover:bg-white/25 active:bg-white/35 text-white transition-colors border border-white/15 focus:outline-none"
                 aria-label="Close photo gallery"
               >
                 <X className="w-5 h-5" />
@@ -207,10 +227,10 @@ export const Awards: React.FC = () => {
               <button
                 type="button"
                 onClick={handlePrev}
-                className="absolute left-1 sm:left-4 z-10 p-3 rounded-full bg-black/40 hover:bg-black/70 text-white border border-white/20 backdrop-blur-sm transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-brand-accentYellow"
+                className="absolute left-1 sm:left-4 z-10 p-2 sm:p-3 rounded-full bg-black/50 hover:bg-black/70 active:scale-95 text-white border border-white/20 backdrop-blur-sm transition-all focus:outline-none"
                 aria-label="Previous photo"
               >
-                <ChevronLeft className="w-6 h-6" />
+                <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
 
               {/* Full Original Image with Title */}
@@ -220,14 +240,14 @@ export const Awards: React.FC = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.96 }}
                 transition={{ duration: 0.2 }}
-                className="flex flex-col items-center justify-center max-h-[74vh] max-w-full px-12"
+                className="flex flex-col items-center justify-center max-h-[74vh] max-w-full px-2 sm:px-12"
               >
                 <img
                   src={AWARDS_GALLERY[selectedIndex].image}
                   alt={AWARDS_GALLERY[selectedIndex].alt}
-                  className="max-h-[66vh] w-auto max-w-full rounded-2xl shadow-2xl object-contain border border-white/10 bg-white"
+                  className="max-h-[60vh] sm:max-h-[66vh] w-auto max-w-full rounded-xl sm:rounded-2xl shadow-2xl object-contain border border-white/10 bg-white"
                 />
-                <p className="mt-3 text-center text-xs sm:text-sm font-medium text-white/90 max-w-2xl px-4">
+                <p className="mt-2.5 sm:mt-3 text-center text-xs sm:text-sm font-medium text-white/90 max-w-2xl px-2 sm:px-4 leading-snug">
                   {AWARDS_GALLERY[selectedIndex].alt}
                 </p>
               </motion.div>
@@ -236,16 +256,16 @@ export const Awards: React.FC = () => {
               <button
                 type="button"
                 onClick={handleNext}
-                className="absolute right-1 sm:right-4 z-10 p-3 rounded-full bg-black/40 hover:bg-black/70 text-white border border-white/20 backdrop-blur-sm transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-brand-accentYellow"
+                className="absolute right-1 sm:right-4 z-10 p-2 sm:p-3 rounded-full bg-black/50 hover:bg-black/70 active:scale-95 text-white border border-white/20 backdrop-blur-sm transition-all focus:outline-none"
                 aria-label="Next photo"
               >
-                <ChevronRight className="w-6 h-6" />
+                <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
             </div>
 
             {/* Bottom Thumbnail Strip */}
             <div 
-              className="w-full max-w-2xl mx-auto flex items-center justify-center gap-2 sm:gap-3 py-2 overflow-x-auto"
+              className="w-full max-w-2xl mx-auto flex items-center justify-start sm:justify-center gap-1.5 sm:gap-3 py-1.5 sm:py-2 overflow-x-auto px-1"
               onClick={(e) => e.stopPropagation()}
             >
               {AWARDS_GALLERY.map((item, idx) => (
@@ -253,7 +273,7 @@ export const Awards: React.FC = () => {
                   key={item.id}
                   type="button"
                   onClick={() => setSelectedIndex(idx)}
-                  className={`relative w-12 h-12 sm:w-16 sm:h-16 rounded-xl overflow-hidden border-2 transition-all flex-shrink-0 bg-white/5 ${
+                  className={`relative w-11 h-11 sm:w-16 sm:h-16 rounded-lg sm:rounded-xl overflow-hidden border-2 transition-all flex-shrink-0 bg-white/5 ${
                     selectedIndex === idx
                       ? 'border-brand-accentYellow scale-105 shadow-glow-yellow'
                       : 'border-white/20 opacity-50 hover:opacity-100 hover:border-white/50'

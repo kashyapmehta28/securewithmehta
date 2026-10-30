@@ -201,7 +201,7 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
                 placeholder="e.g. Ramesh Shah"
                 value={formData.fullName}
                 onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                className={`w-full px-4 py-2.5 rounded-xl text-sm border bg-white text-brand-dark placeholder:text-brand-mutedLight focus:outline-none focus:ring-2 focus:ring-brand-forest transition-all ${
+                className={`w-full px-4 py-3 sm:py-2.5 rounded-xl text-base sm:text-sm border bg-white text-brand-dark placeholder:text-brand-mutedLight focus:outline-none focus:ring-2 focus:ring-brand-forest transition-all ${
                   errors.fullName ? 'border-rose-500 bg-rose-50/20' : 'border-brand-borderSubtle'
                 }`}
               />
@@ -220,7 +220,7 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
                 placeholder="10-digit mobile number"
                 value={formData.mobile}
                 onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
-                className={`w-full px-4 py-2.5 rounded-xl text-sm border bg-white text-brand-dark placeholder:text-brand-mutedLight focus:outline-none focus:ring-2 focus:ring-brand-forest transition-all ${
+                className={`w-full px-4 py-3 sm:py-2.5 rounded-xl text-base sm:text-sm border bg-white text-brand-dark placeholder:text-brand-mutedLight focus:outline-none focus:ring-2 focus:ring-brand-forest transition-all ${
                   errors.mobile ? 'border-rose-500 bg-rose-50/20' : 'border-brand-borderSubtle'
                 }`}
               />
@@ -242,7 +242,7 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
                 placeholder="name@example.com"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className={`w-full px-4 py-2.5 rounded-xl text-sm border bg-white text-brand-dark placeholder:text-brand-mutedLight focus:outline-none focus:ring-2 focus:ring-brand-forest transition-all ${
+                className={`w-full px-4 py-3 sm:py-2.5 rounded-xl text-base sm:text-sm border bg-white text-brand-dark placeholder:text-brand-mutedLight focus:outline-none focus:ring-2 focus:ring-brand-forest transition-all ${
                   errors.email ? 'border-rose-500 bg-rose-50/20' : 'border-brand-borderSubtle'
                 }`}
               />
@@ -261,7 +261,7 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
                 placeholder="e.g. Mumbai / Thane / Pune"
                 value={formData.city}
                 onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                className={`w-full px-4 py-2.5 rounded-xl text-sm border bg-white text-brand-dark placeholder:text-brand-mutedLight focus:outline-none focus:ring-2 focus:ring-brand-forest transition-all ${
+                className={`w-full px-4 py-3 sm:py-2.5 rounded-xl text-base sm:text-sm border bg-white text-brand-dark placeholder:text-brand-mutedLight focus:outline-none focus:ring-2 focus:ring-brand-forest transition-all ${
                   errors.city ? 'border-rose-500 bg-rose-50/20' : 'border-brand-borderSubtle'
                 }`}
               />
@@ -280,7 +280,7 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
               id="insuranceType"
               value={formData.insuranceType}
               onChange={(e) => setFormData({ ...formData, insuranceType: e.target.value })}
-              className={`w-full px-4 py-2.5 rounded-xl text-sm border bg-white text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-forest transition-all ${
+              className={`w-full px-4 py-3 sm:py-2.5 rounded-xl text-base sm:text-sm border bg-white text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-forest transition-all ${
                 errors.insuranceType ? 'border-rose-500 bg-rose-50/20' : 'border-brand-borderSubtle'
               }`}
             >
@@ -310,7 +310,7 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
               placeholder="e.g. Looking for a family health floater of 15-25 lakhs with zero room-rent cap, or need factory fire and machinery breakdown quote."
               value={formData.requirement}
               onChange={(e) => setFormData({ ...formData, requirement: e.target.value })}
-              className={`w-full px-4 py-2.5 rounded-xl text-sm border bg-white text-brand-dark placeholder:text-brand-mutedLight focus:outline-none focus:ring-2 focus:ring-brand-forest transition-all ${
+              className={`w-full px-4 py-3 sm:py-2.5 rounded-xl text-base sm:text-sm border bg-white text-brand-dark placeholder:text-brand-mutedLight focus:outline-none focus:ring-2 focus:ring-brand-forest transition-all ${
                 errors.requirement ? 'border-rose-500 bg-rose-50/20' : 'border-brand-borderSubtle'
               }`}
             />

@@ -236,22 +236,22 @@ export const Reviews: React.FC = () => {
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
         >
-          {/* Left Navigation Arrow */}
+          {/* Left Navigation Arrow (Desktop floating) */}
           <button
             type="button"
             onClick={handlePrev}
             aria-label="Previous review"
-            className="absolute -left-2 sm:-left-3 lg:-left-5 top-1/2 -translate-y-1/2 z-20 p-2.5 sm:p-3.5 rounded-full bg-white text-brand-forest hover:bg-brand-forest hover:text-brand-accentYellow shadow-soft hover:shadow-soft-lg border border-brand-borderSubtle transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-accentGreenBorder"
+            className="hidden sm:flex items-center justify-center absolute -left-2 sm:-left-3 lg:-left-5 top-1/2 -translate-y-1/2 z-20 p-2.5 sm:p-3.5 rounded-full bg-white text-brand-forest hover:bg-brand-forest hover:text-brand-accentYellow shadow-soft hover:shadow-soft-lg border border-brand-borderSubtle transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-accentGreenBorder"
           >
             <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
 
-          {/* Right Navigation Arrow */}
+          {/* Right Navigation Arrow (Desktop floating) */}
           <button
             type="button"
             onClick={handleNext}
             aria-label="Next review"
-            className="absolute -right-2 sm:-right-3 lg:-right-5 top-1/2 -translate-y-1/2 z-20 p-2.5 sm:p-3.5 rounded-full bg-white text-brand-forest hover:bg-brand-forest hover:text-brand-accentYellow shadow-soft hover:shadow-soft-lg border border-brand-borderSubtle transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-accentGreenBorder"
+            className="hidden sm:flex items-center justify-center absolute -right-2 sm:-right-3 lg:-right-5 top-1/2 -translate-y-1/2 z-20 p-2.5 sm:p-3.5 rounded-full bg-white text-brand-forest hover:bg-brand-forest hover:text-brand-accentYellow shadow-soft hover:shadow-soft-lg border border-brand-borderSubtle transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-accentGreenBorder"
           >
             <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
@@ -269,58 +269,58 @@ export const Reviews: React.FC = () => {
                 <div
                   key={`${item.id}-${idx}`}
                   style={{ width: `${100 / visibleCount}%` }}
-                  className="flex-shrink-0 px-2.5 sm:px-3.5"
+                  className="flex-shrink-0 px-2 sm:px-3.5"
                 >
                   <motion.div
                     initial={{ opacity: 0, y: 15 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.3 }}
-                    className="h-full bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-7 border border-brand-borderSubtle hover:border-brand-accentGreenBorder shadow-soft hover:shadow-soft-lg transition-all duration-300 flex flex-col justify-between group relative"
+                    className="h-full bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-7 border border-brand-borderSubtle hover:border-brand-accentGreenBorder shadow-soft hover:shadow-soft-lg transition-all duration-300 flex flex-col justify-between group relative"
                   >
                     {/* Top Decorative Quote Icon */}
-                    <div className="absolute top-5 right-6 text-brand-accentGreen pointer-events-none group-hover:text-emerald-200 transition-colors">
-                      <Quote className="w-8 h-8 fill-current opacity-40 rotate-180" />
+                    <div className="absolute top-4 sm:top-5 right-5 sm:right-6 text-brand-accentGreen pointer-events-none group-hover:text-emerald-200 transition-colors">
+                      <Quote className="w-7 h-7 sm:w-8 sm:h-8 fill-current opacity-40 rotate-180" />
                     </div>
 
                     <div>
                       {/* Top Row: 5 Stars & Verified Badge */}
-                      <div className="flex items-center justify-between gap-2 mb-4">
-                        <div className="flex items-center gap-1">
+                      <div className="flex items-center justify-between gap-2 mb-3 sm:mb-4">
+                        <div className="flex items-center gap-0.5 sm:gap-1">
                           {[...Array(item.rating)].map((_, s) => (
-                            <Star key={s} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                            <Star key={s} className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-amber-400 text-amber-400" />
                           ))}
                         </div>
-                        <span className="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-100">
+                        <span className="inline-flex items-center gap-1 text-[10px] sm:text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2 sm:px-2.5 py-0.5 rounded-full border border-emerald-100">
                           <CheckCircle2 className="w-3 h-3 text-emerald-600" />
                           Verified
                         </span>
                       </div>
 
                       {/* Review Quote Text */}
-                      <p className="text-sm sm:text-[15px] text-brand-dark/85 leading-relaxed font-normal italic">
+                      <p className="text-xs sm:text-[15px] text-brand-dark/85 leading-relaxed font-normal italic">
                         "{item.review}"
                       </p>
                     </div>
 
                     {/* Bottom Author Section (Indian Names with policy and location below) */}
-                    <div className="pt-5 mt-5 border-t border-brand-borderSubtle/70 flex items-center gap-3.5">
+                    <div className="pt-4 sm:pt-5 mt-4 sm:mt-5 border-t border-brand-borderSubtle/70 flex items-center gap-3 sm:gap-3.5">
                       {/* Initials Avatar */}
                       <div
-                        className={`w-11 h-11 rounded-full ${item.avatarBg || 'bg-brand-forest'} text-white font-extrabold text-sm flex items-center justify-center flex-shrink-0 shadow-soft-sm tracking-wider`}
+                        className={`w-10 h-10 sm:w-11 sm:h-11 rounded-full ${item.avatarBg || 'bg-brand-forest'} text-white font-extrabold text-xs sm:text-sm flex items-center justify-center flex-shrink-0 shadow-soft-sm tracking-wider`}
                       >
                         {item.initials}
                       </div>
 
                       {/* Name & Subtitle */}
                       <div className="min-w-0 flex-1">
-                        <h3 className="font-extrabold text-brand-dark text-base sm:text-lg leading-tight truncate">
+                        <h3 className="font-extrabold text-brand-dark text-sm sm:text-lg leading-tight truncate">
                           {item.name}
                         </h3>
-                        <p className="text-xs text-brand-forest font-semibold mt-0.5 truncate">
+                        <p className="text-[11px] sm:text-xs text-brand-forest font-semibold mt-0.5 truncate">
                           {item.policyType}
                         </p>
-                        <p className="text-[11px] text-brand-muted font-normal mt-0.5 truncate">
+                        <p className="text-[10px] sm:text-[11px] text-brand-muted font-normal mt-0.5 truncate">
                           {item.location}
                         </p>
                       </div>
@@ -332,30 +332,55 @@ export const Reviews: React.FC = () => {
             </div>
           </div>
 
-          {/* Autoplay status hint & manual navigation dots */}
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-brand-muted px-2">
-            <div className="flex items-center gap-1.5 order-2 sm:order-1">
-              {REVIEWS_DATA.map((_, dotIdx) => (
-                <button
-                  key={dotIdx}
-                  type="button"
-                  onClick={() => {
-                    setIsTransitioning(true);
-                    setCurrentIndex(dotIdx);
-                  }}
-                  aria-label={`Jump to review ${dotIdx + 1}`}
-                  className={`h-2.5 rounded-full transition-all duration-300 ${
-                    activeDotIndex === dotIdx
-                      ? 'w-8 bg-brand-forest shadow-soft-sm'
-                      : 'w-2.5 bg-brand-forest/20 hover:bg-brand-forest/40'
-                  }`}
-                />
-              ))}
+          {/* Autoplay status hint & manual navigation controls */}
+          <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 text-xs text-brand-muted px-1 sm:px-2">
+            
+            {/* Left/Right Buttons on Mobile + Centered Dots */}
+            <div className="flex items-center gap-3 order-2 sm:order-1 w-full sm:w-auto justify-between sm:justify-start">
+              {/* Mobile Prev Arrow */}
+              <button
+                type="button"
+                onClick={handlePrev}
+                aria-label="Previous review"
+                className="sm:hidden p-2.5 rounded-full bg-white text-brand-forest border border-brand-borderSubtle shadow-soft active:bg-brand-accentGreen active:scale-95 transition-all"
+              >
+                <ChevronLeft className="w-4 h-4" />
+              </button>
+
+              {/* Dots */}
+              <div className="flex items-center gap-1.5">
+                {REVIEWS_DATA.map((_, dotIdx) => (
+                  <button
+                    key={dotIdx}
+                    type="button"
+                    onClick={() => {
+                      setIsTransitioning(true);
+                      setCurrentIndex(dotIdx);
+                    }}
+                    aria-label={`Jump to review ${dotIdx + 1}`}
+                    className={`h-2 sm:h-2.5 rounded-full transition-all duration-300 ${
+                      activeDotIndex === dotIdx
+                        ? 'w-6 sm:w-8 bg-brand-forest shadow-soft-sm'
+                        : 'w-2 sm:w-2.5 bg-brand-forest/20 hover:bg-brand-forest/40'
+                    }`}
+                  />
+                ))}
+              </div>
+
+              {/* Mobile Next Arrow */}
+              <button
+                type="button"
+                onClick={handleNext}
+                aria-label="Next review"
+                className="sm:hidden p-2.5 rounded-full bg-white text-brand-forest border border-brand-borderSubtle shadow-soft active:bg-brand-accentGreen active:scale-95 transition-all"
+              >
+                <ChevronRight className="w-4 h-4" />
+              </button>
             </div>
 
-            <div className="order-1 sm:order-2 text-[11px] text-brand-muted/80 flex items-center gap-1.5 font-medium">
+            <div className="order-1 sm:order-2 text-[10px] sm:text-[11px] text-brand-muted/80 flex items-center gap-1.5 font-medium">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span>Auto-swiping every 4.5s • Hover to pause</span>
+              <span>Auto-swiping every 4.5s • Swipe or tap arrows</span>
             </div>
           </div>
 

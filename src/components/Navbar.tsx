@@ -19,6 +19,18 @@ export const Navbar: React.FC<NavbarProps> = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Lock background scroll when mobile drawer is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen]);
+
   const navLinks = [
     { name: 'Home', href: '#home' },
     { name: 'Services', href: '#services' },
@@ -56,8 +68,8 @@ export const Navbar: React.FC<NavbarProps> = () => {
             onClick={(e) => scrollToSection(e, '#home')}
             className="flex items-center gap-3 sm:gap-3.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-forest rounded-xl p-1 flex-shrink-0"
           >
-            {/* Logo Image (Bigger Size: 56px - 64px) */}
-            <div className="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-brand-forest text-white shadow-soft group-hover:scale-105 group-hover:shadow-soft-lg transition-all duration-200 border-2 border-brand-accentGreenBorder/60 flex-shrink-0 overflow-hidden">
+            {/* Logo Image */}
+            <div className="flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-brand-forest text-white shadow-soft group-hover:scale-105 group-hover:shadow-soft-lg transition-all duration-200 border-2 border-brand-accentGreenBorder/60 flex-shrink-0 overflow-hidden">
               {!logoError ? (
                 <img
                   src="/favicon.svg"
@@ -66,14 +78,14 @@ export const Navbar: React.FC<NavbarProps> = () => {
                   onError={() => setLogoError(true)}
                 />
               ) : (
-                <span className="font-black text-xl sm:text-2xl tracking-wider text-brand-accentYellow">
+                <span className="font-black text-lg sm:text-2xl tracking-wider text-brand-accentYellow">
                   {SITE_CONFIG.brand.temporaryWordmark}
                 </span>
               )}
             </div>
 
             {/* Brand Name (Small Size) */}
-            <span className="font-bold text-xs sm:text-sm md:text-base text-brand-dark tracking-tight leading-tight group-hover:text-brand-forest transition-colors">
+            <span className="font-bold text-xs sm:text-sm md:text-base text-brand-dark tracking-tight leading-tight group-hover:text-brand-forest transition-colors max-w-[130px] xs:max-w-[200px] sm:max-w-none truncate">
               {SITE_CONFIG.brand.fullName}
             </span>
           </a>
@@ -143,50 +155,57 @@ export const Navbar: React.FC<NavbarProps> = () => {
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Backdrop & Drawer */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-white border-b border-brand-borderSubtle shadow-soft-lg px-4 pt-3 pb-6 animate-in slide-in-from-top-4 duration-200">
-          <div className="flex flex-col space-y-1 mb-4">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={(e) => scrollToSection(e, link.href)}
-                className="px-3.5 py-2.5 rounded-lg text-sm font-semibold text-brand-dark hover:bg-brand-accentGreenLight hover:text-brand-forest transition-colors"
-              >
-                {link.name}
-              </a>
-            ))}
-          </div>
-
-          {/* Direct phone contacts in mobile drawer */}
-          <div className="pt-3 border-t border-brand-borderSubtle space-y-2">
-            <div className="text-[11px] font-bold text-brand-muted uppercase tracking-wider px-3">
-              Direct Contact
+        <>
+          <div
+            className="fixed inset-0 top-[60px] sm:top-[68px] bg-black/40 backdrop-blur-xs z-40 lg:hidden animate-in fade-in duration-200"
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+          <div className="relative z-50 lg:hidden bg-white border-b border-brand-borderSubtle shadow-soft-lg px-4 pt-3 pb-6 max-h-[calc(100vh-70px)] overflow-y-auto animate-in slide-in-from-top-4 duration-200">
+            <div className="flex flex-col space-y-1 mb-4">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={(e) => scrollToSection(e, link.href)}
+                  className="px-3.5 py-3 rounded-xl text-sm font-bold text-brand-dark hover:bg-brand-accentGreenLight hover:text-brand-forest active:bg-brand-accentGreen transition-colors flex items-center justify-between"
+                >
+                  <span>{link.name}</span>
+                  <ArrowRight className="w-3.5 h-3.5 text-brand-muted opacity-50" />
+                </a>
+              ))}
             </div>
-            <a
-              href={SITE_CONFIG.contacts.numbers[0].tel}
-              className="flex items-center justify-between px-3 py-2.5 rounded-lg bg-brand-accentGreenLight hover:bg-brand-accentGreen text-brand-dark text-xs font-semibold transition-colors"
-            >
-              <div>
-                <span className="font-bold text-brand-forest">{SITE_CONFIG.contacts.numbers[0].display}</span>
-                <span className="text-[11px] text-brand-muted ml-2">({SITE_CONFIG.contacts.numbers[0].label})</span>
+
+            {/* Direct phone contacts in mobile drawer */}
+            <div className="pt-3 border-t border-brand-borderSubtle space-y-2">
+              <div className="text-[11px] font-bold text-brand-muted uppercase tracking-wider px-3">
+                Direct Contact
               </div>
-              <Phone className="w-3.5 h-3.5 text-brand-forest" />
-            </a>
-            <a
-              href={`https://wa.me/${SITE_CONFIG.contacts.defaultWhatsAppNumber}?text=${encodeURIComponent(
-                'Hello Kashyap ji, I would like to consult with you regarding insurance guidance.'
-              )}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full flex items-center justify-center gap-2 mt-3 py-2.5 rounded-xl bg-brand-forest text-white text-sm font-semibold"
-            >
-              <Shield className="w-4 h-4 text-brand-accentYellow" />
-              <span>Connect on WhatsApp</span>
-            </a>
+              <a
+                href={SITE_CONFIG.contacts.numbers[0].tel}
+                className="flex items-center justify-between px-3.5 py-3 rounded-xl bg-brand-accentGreenLight hover:bg-brand-accentGreen text-brand-dark text-xs font-semibold transition-colors"
+              >
+                <div>
+                  <span className="font-bold text-brand-forest">{SITE_CONFIG.contacts.numbers[0].display}</span>
+                  <span className="text-[11px] text-brand-muted ml-2">({SITE_CONFIG.contacts.numbers[0].label})</span>
+                </div>
+                <Phone className="w-3.5 h-3.5 text-brand-forest" />
+              </a>
+              <a
+                href={`https://wa.me/${SITE_CONFIG.contacts.defaultWhatsAppNumber}?text=${encodeURIComponent(
+                  'Hello Kashyap ji, I would like to consult with you regarding insurance guidance.'
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center justify-center gap-2 mt-3 py-3 rounded-xl bg-brand-forest active:bg-brand-forestHover text-white text-sm font-semibold shadow-soft"
+              >
+                <Shield className="w-4 h-4 text-brand-accentYellow" />
+                <span>Connect on WhatsApp</span>
+              </a>
+            </div>
           </div>
-        </div>
+        </>
       )}
     </header>
   );

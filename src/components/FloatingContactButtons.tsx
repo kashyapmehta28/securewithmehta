@@ -25,9 +25,9 @@ export const FloatingContactButtons: React.FC = () => {
 
   return (
     <>
-      {/* Center Bottom: Small Top Arrow (Scroll to Top) Button */}
+      {/* Scroll to Top Button: Positioned on bottom-right above WhatsApp on mobile so it never collides */}
       {showScrollTop && (
-        <div className="fixed bottom-5 left-1/2 -translate-x-1/2 z-40">
+        <div className="fixed bottom-20 right-4 sm:right-6 sm:bottom-24 z-40">
           <button
             type="button"
             onClick={scrollToTop}
@@ -39,11 +39,12 @@ export const FloatingContactButtons: React.FC = () => {
           </button>
         </div>
       )}
+
       {/* Bottom Left: Fixed Phone Call Button (Direct Call) */}
-      <div className="fixed bottom-5 left-5 z-40">
+      <div className="fixed bottom-4 left-4 sm:bottom-6 sm:left-6 z-40">
         <a
           href={primaryPhone.tel}
-          className="flex items-center gap-2 px-4 py-3 rounded-full bg-white text-brand-forest border-2 border-brand-forest hover:bg-brand-forest hover:text-white shadow-soft-lg transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-forest group"
+          className="flex items-center gap-2 px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-full bg-white text-brand-forest border-2 border-brand-forest hover:bg-brand-forest hover:text-white shadow-soft-lg transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-forest group active:scale-95"
           aria-label="Call Us"
           title="Call Us"
         >
@@ -55,16 +56,16 @@ export const FloatingContactButtons: React.FC = () => {
       </div>
 
       {/* Bottom Right: Fixed WhatsApp Quick Action Button */}
-      <div className="fixed bottom-5 right-5 z-40">
+      <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40">
         <a
           href={`https://wa.me/${SITE_CONFIG.contacts.defaultWhatsAppNumber}?text=${whatsappMessage}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2.5 px-4 py-3 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white shadow-soft-lg hover:shadow-glow-green transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-emerald-600 group"
+          className="flex items-center gap-2 px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white shadow-soft-lg hover:shadow-glow-green transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-emerald-600 group active:scale-95"
           aria-label="Direct WhatsApp inquiry with Kashyap Mehta"
         >
           <MessageCircle className="w-5 h-5 text-white" />
-          <span className="text-xs font-bold hidden sm:inline">WhatsApp</span>
+          <span className="text-xs font-bold inline sm:inline">WhatsApp</span>
         </a>
       </div>
     </>

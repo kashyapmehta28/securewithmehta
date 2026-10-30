@@ -48,8 +48,8 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService, onExploreAl
           </p>
         </div>
 
-        {/* 8 Clean Heading-Only Policy Cards (2 rows of 4 on desktop) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mb-12">
+        {/* 8 Clean Heading-Only Policy Cards (2 cols on mobile, 4 on desktop) */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 mb-10 sm:mb-12">
           {top8Services.map((service, index) => (
             <motion.div
               key={service.id}
@@ -57,29 +57,29 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService, onExploreAl
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.3, delay: index * 0.025 }}
-              className="group relative flex flex-col justify-between bg-white rounded-2xl p-5 border border-brand-borderSubtle hover:border-brand-accentGreenBorder shadow-soft-sm hover:shadow-soft hover:-translate-y-1 transition-all duration-200"
+              className="group relative flex flex-col justify-between bg-white rounded-xl sm:rounded-2xl p-3.5 sm:p-5 border border-brand-borderSubtle hover:border-brand-accentGreenBorder shadow-soft-sm hover:shadow-soft hover:-translate-y-1 transition-all duration-200"
             >
               <div>
                 {/* Icon Box */}
-                <div className="w-11 h-11 rounded-xl bg-brand-accentGreen text-brand-forest flex items-center justify-center mb-3.5 group-hover:bg-brand-forest group-hover:text-brand-accentYellow transition-colors duration-200">
-                  <DynamicIcon name={service.icon} className="w-5 h-5" />
+                <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-brand-accentGreen text-brand-forest flex items-center justify-center mb-2.5 sm:mb-3.5 group-hover:bg-brand-forest group-hover:text-brand-accentYellow transition-colors duration-200">
+                  <DynamicIcon name={service.icon} className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
 
                 {/* Title Only - Clean & Bold */}
-                <h3 className="text-sm sm:text-base font-bold text-brand-dark group-hover:text-brand-forest transition-colors leading-snug">
+                <h3 className="text-xs sm:text-base font-bold text-brand-dark group-hover:text-brand-forest transition-colors leading-snug line-clamp-2">
                   {service.title}
                 </h3>
               </div>
 
               {/* Inquire Action Link */}
-              <div className="mt-4 pt-3 border-t border-brand-borderSubtle/60 flex items-center justify-between">
+              <div className="mt-3 sm:mt-4 pt-2.5 sm:pt-3 border-t border-brand-borderSubtle/60 flex items-center justify-between">
                 <button
                   type="button"
                   onClick={() => onSelectService(service.title)}
-                  className="text-xs font-bold text-brand-forest hover:text-brand-forestHover inline-flex items-center gap-1 group/btn"
+                  className="text-[11px] sm:text-xs font-bold text-brand-forest hover:text-brand-forestHover inline-flex items-center gap-1 group/btn"
                 >
                   <span>Inquire</span>
-                  <ArrowUpRight className="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+                  <ArrowUpRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                 </button>
               </div>
             </motion.div>
