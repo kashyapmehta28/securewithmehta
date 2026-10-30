@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="16" fill="#113525"/>
+  <path d="M32 10L48 18V32C48 42.5 41.2 52.1 32 55C22.8 52.1 16 42.5 16 32V18L32 10Z" stroke="#E4F1E8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M32 20L42 26V34C42 40 37.8 45.8 32 47.6C26.2 45.8 22 40 22 34V26L32 20Z" fill="#E4F1E8" fill-opacity="0.15"/>
+  <text x="32" y="38" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="14" font-weight="700" fill="#FFF3C4" text-anchor="middle">SWM</text>
+</svg>
