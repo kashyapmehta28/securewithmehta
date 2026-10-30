@@ -5,10 +5,10 @@ export const About: React.FC = () => {
   return (
     <section id="about" className="py-16 md:py-24 bg-brand-accentGreenLight/30 border-y border-brand-borderSubtle">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-stretch">
           
           {/* Left Column: Owner Portrait (Exact Height Match with Text) */}
-          <div className="lg:col-span-5 flex flex-col">
+          <div className="md:col-span-5 flex flex-col">
             <div className="relative h-full min-h-[360px] sm:min-h-[420px] rounded-2xl overflow-hidden shadow-soft-lg border border-brand-borderSubtle group bg-brand-accentGreenLight flex flex-col justify-end">
               {/* Photo filling 100% of the column height */}
               <img
@@ -45,7 +45,7 @@ export const About: React.FC = () => {
           </div>
 
           {/* Right Column: Narrative (Aligned from Image Top to Image Bottom) */}
-          <div className="lg:col-span-7 flex flex-col justify-between py-0.5 text-left">
+          <div className="md:col-span-7 flex flex-col justify-between py-0.5 text-left">
             <div>
               {/* Top Tag - Level with Image Top */}
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-accentGreen text-brand-forest border border-brand-accentGreenBorder mb-3 text-xs font-semibold uppercase tracking-wider">

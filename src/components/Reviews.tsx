@@ -229,29 +229,29 @@ export const Reviews: React.FC = () => {
 
         {/* Carousel Container */}
         <div
-          className="relative px-2 sm:px-4"
+          className="relative px-2 sm:px-6 md:px-10 lg:px-4"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
         >
-          {/* Left Navigation Arrow (Desktop floating) */}
+          {/* Left Navigation Arrow (Tablet & Desktop floating) */}
           <button
             type="button"
             onClick={handlePrev}
             aria-label="Previous review"
-            className="hidden sm:flex items-center justify-center absolute -left-2 sm:-left-3 lg:-left-5 top-1/2 -translate-y-1/2 z-20 p-2.5 sm:p-3.5 rounded-full bg-white text-brand-forest hover:bg-brand-forest hover:text-brand-accentYellow shadow-soft hover:shadow-soft-lg border border-brand-borderSubtle transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-accentGreenBorder"
+            className="hidden sm:flex items-center justify-center absolute left-0 sm:left-1 md:left-1.5 lg:-left-5 top-1/2 -translate-y-1/2 z-20 p-2.5 sm:p-3.5 rounded-full bg-white text-brand-forest hover:bg-brand-forest hover:text-brand-accentYellow shadow-soft hover:shadow-soft-lg border border-brand-borderSubtle transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-accentGreenBorder"
           >
             <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
 
-          {/* Right Navigation Arrow (Desktop floating) */}
+          {/* Right Navigation Arrow (Tablet & Desktop floating) */}
           <button
             type="button"
             onClick={handleNext}
             aria-label="Next review"
-            className="hidden sm:flex items-center justify-center absolute -right-2 sm:-right-3 lg:-right-5 top-1/2 -translate-y-1/2 z-20 p-2.5 sm:p-3.5 rounded-full bg-white text-brand-forest hover:bg-brand-forest hover:text-brand-accentYellow shadow-soft hover:shadow-soft-lg border border-brand-borderSubtle transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-accentGreenBorder"
+            className="hidden sm:flex items-center justify-center absolute right-0 sm:right-1 md:right-1.5 lg:-right-5 top-1/2 -translate-y-1/2 z-20 p-2.5 sm:p-3.5 rounded-full bg-white text-brand-forest hover:bg-brand-forest hover:text-brand-accentYellow shadow-soft hover:shadow-soft-lg border border-brand-borderSubtle transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-accentGreenBorder"
           >
             <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>

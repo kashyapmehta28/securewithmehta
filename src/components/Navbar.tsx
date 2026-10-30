@@ -108,8 +108,8 @@ export const Navbar: React.FC<NavbarProps> = () => {
             ))}
           </nav>
 
-          {/* Right Action Buttons */}
-          <div className="hidden md:flex items-center gap-2.5">
+          {/* Desktop Right Action Buttons (Shown on lg: 1024px+) */}
+          <div className="hidden lg:flex items-center gap-2.5">
             {/* Phone quick call direct link */}
             <a
               href={SITE_CONFIG.contacts.numbers[0].tel}
@@ -132,20 +132,33 @@ export const Navbar: React.FC<NavbarProps> = () => {
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Tablet & Mobile Header Actions (< 1024px) */}
           <div className="flex items-center gap-2 lg:hidden">
+            {/* Tablet-friendly Quick Call */}
+            <a
+              href={SITE_CONFIG.contacts.numbers[0].tel}
+              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-brand-borderSubtle hover:border-brand-accentGreenBorder text-brand-forest text-xs font-semibold bg-white shadow-soft-sm"
+              aria-label="Direct Call"
+            >
+              <Phone className="w-3.5 h-3.5 text-brand-forest" />
+              <span>Call</span>
+            </a>
+
+            {/* Assistance Button */}
             <a
               href="#inquiry-form"
               onClick={(e) => scrollToSection(e, '#inquiry-form')}
-              className="px-3 py-1.5 rounded-lg bg-brand-forest text-white text-xs font-semibold"
+              className="px-3 sm:px-3.5 py-1.5 rounded-lg bg-brand-forest text-white text-xs font-semibold hover:bg-brand-forestHover transition-colors shadow-soft-sm"
             >
               Assistance
             </a>
+
+            {/* Mobile/Tablet Menu Button */}
             <button
               type="button"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 rounded-lg text-brand-dark hover:bg-brand-accentGreen focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-forest"
-              aria-label="Toggle mobile navigation menu"
+              className="p-2 rounded-lg text-brand-dark hover:bg-brand-accentGreen focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-forest transition-colors"
+              aria-label="Toggle navigation menu"
               aria-expanded={isMobileMenuOpen}
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

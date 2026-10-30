@@ -99,7 +99,7 @@ export const FAQ: React.FC = () => {
         {/* 4 Balanced Rows: 4 questions Left, 4 questions Right */}
         <div className="space-y-4">
           {faqRows.map((row, idx) => (
-            <div key={idx} className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-start">
+            <div key={idx} className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
               {renderFaqCard(row.left)}
               {renderFaqCard(row.right)}
             </div>

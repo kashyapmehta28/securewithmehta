@@ -51,8 +51,8 @@ export const TrustStats: React.FC = () => {
     <section className="py-16 md:py-24 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Stats Grid - 2x2 on mobile, 4 in a row on desktop */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-8">
+        {/* Stats Grid - 2 cols on mobile, 4 in a row on tablet & desktop */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
           {SITE_CONFIG.stats.map((stat, index) => (
             <motion.div
               key={index}

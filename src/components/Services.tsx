@@ -48,8 +48,8 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService, onExploreAl
           </p>
         </div>
 
-        {/* 8 Clean Heading-Only Policy Cards (2 cols on mobile, 4 on desktop) */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 mb-10 sm:mb-12">
+        {/* 8 Clean Heading-Only Policy Cards (2 cols on mobile, 4 on tablet & desktop) */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-5 mb-10 sm:mb-12">
           {top8Services.map((service, index) => (
             <motion.div
               key={service.id}

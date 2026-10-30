@@ -15,7 +15,7 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-white/10 text-left">
           
           {/* Brand Info */}
-          <div className="lg:col-span-5 space-y-4">
+          <div className="md:col-span-2 lg:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-white/10 text-brand-accentYellow flex items-center justify-center font-black text-sm">
                 {SITE_CONFIG.brand.temporaryWordmark}
@@ -41,7 +41,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="lg:col-span-3 space-y-3">
+          <div className="md:col-span-1 lg:col-span-3 space-y-3">
             <div className="text-xs font-bold uppercase tracking-wider text-brand-accentYellow">
               Navigation
             </div>
@@ -77,7 +77,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Contact Direct */}
-          <div className="lg:col-span-4 space-y-3">
+          <div className="md:col-span-1 lg:col-span-4 space-y-3">
             <div className="text-xs font-bold uppercase tracking-wider text-brand-accentYellow">
               Direct Contact
             </div>
