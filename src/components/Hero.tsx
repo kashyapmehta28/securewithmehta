@@ -126,11 +126,20 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onAssistanceClick })
                 {/* Consultant Details Card Footer */}
                 <div className="mt-5 pt-4 border-t border-brand-borderSubtle">
                   <div className="flex items-center justify-between mb-3">
-                    <div>
-                      <h3 className="text-base font-bold text-brand-dark">Kashyap Mehta</h3>
-                      <p className="text-xs text-brand-muted">
-                        Secure With Mehta <span className="text-[10px] text-brand-forest font-semibold">(Formerly Mehta Associates)</span>
-                      </p>
+                    <div className="flex items-center gap-2.5">
+                      <div className="w-9 h-9 rounded-lg bg-white p-0.5 border border-brand-borderSubtle flex-shrink-0 shadow-soft-sm">
+                        <img
+                          src="/images/logo.png"
+                          alt="Secure With Mehta"
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                      <div>
+                        <h3 className="text-base font-bold text-brand-dark leading-tight">Kashyap Mehta</h3>
+                        <p className="text-xs text-brand-muted">
+                          Secure With Mehta <span className="text-[10px] text-brand-forest font-semibold">(Formerly Mehta Associates)</span>
+                        </p>
+                      </div>
                     </div>
                     <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[11px] font-semibold bg-brand-accentGreen text-brand-forest">
                       <MapPin className="w-3 h-3" />

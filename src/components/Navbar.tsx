@@ -77,12 +77,12 @@ export const Navbar: React.FC<NavbarProps> = () => {
             className="flex items-center gap-3 sm:gap-3.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-forest rounded-xl p-1 flex-shrink-0"
           >
             {/* Logo Image */}
-            <div className="flex items-center justify-center w-11 h-11 xs:w-12 xs:h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-brand-forest text-white shadow-soft group-hover:scale-105 group-hover:shadow-soft-lg transition-all duration-200 border-2 border-brand-accentGreenBorder/60 flex-shrink-0 overflow-hidden">
+            <div className="flex items-center justify-center w-11 h-11 xs:w-12 xs:h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-white shadow-soft group-hover:scale-105 group-hover:shadow-soft-lg transition-all duration-200 border border-brand-borderSubtle flex-shrink-0 p-1">
               {!logoError ? (
                 <img
-                  src="/favicon.svg"
+                  src="/images/logo.png"
                   alt={`${SITE_CONFIG.brand.fullName} Logo`}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                   onError={() => setLogoError(true)}
                 />
               ) : (
@@ -184,6 +184,25 @@ export const Navbar: React.FC<NavbarProps> = () => {
             onClick={() => setIsMobileMenuOpen(false)}
           />
           <div className="relative z-50 lg:hidden bg-white border-b border-brand-borderSubtle shadow-soft-lg px-4 pt-3 pb-8 max-h-[calc(100vh-64px)] overflow-y-auto overscroll-contain animate-in slide-in-from-top-4 duration-200">
+            {/* Drawer Brand Header with Logo */}
+            <div className="flex items-center gap-3 px-2 py-2 mb-3 pb-3 border-b border-brand-borderSubtle/60">
+              <div className="w-10 h-10 rounded-xl bg-white p-1 border border-brand-borderSubtle shadow-soft-sm flex-shrink-0 flex items-center justify-center">
+                <img
+                  src="/images/logo.png"
+                  alt="Secure With Mehta"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="min-w-0">
+                <div className="font-bold text-xs text-brand-dark truncate leading-tight">
+                  {SITE_CONFIG.brand.fullName}
+                </div>
+                <div className="text-[10px] text-brand-muted font-medium mt-0.5">
+                  {SITE_CONFIG.brand.founder} • Mumbai
+                </div>
+              </div>
+            </div>
+
             <div className="flex flex-col space-y-1 mb-4">
               {navLinks.map((link) => (
                 <a

@@ -29,6 +29,7 @@ export const SITE_CONFIG = {
     tagline: "Life & General Insurance Consultancy",
     founder: "Kashyap Mehta",
     role: "Insurance Advisor & Consultant",
+    logo: "/images/logo.png",
     temporaryWordmark: "SWM",
     temporaryWordmarkSubtext: "Secure With Mehta",
     historyYears: 39,

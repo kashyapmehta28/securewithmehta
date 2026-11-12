@@ -77,11 +77,11 @@ export const AllServicesPage: React.FC<AllServicesPageProps> = ({ onBack, onSele
               onClick={onBack}
               className="flex items-center gap-2.5 sm:gap-3 group focus:outline-none"
             >
-              <div className="flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-brand-forest text-white shadow-soft group-hover:scale-105 transition-all overflow-hidden border border-brand-accentGreenBorder/60">
+              <div className="flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-white p-1 shadow-soft group-hover:scale-105 transition-all overflow-hidden border border-brand-borderSubtle">
                 <img
-                  src="/favicon.svg"
+                  src="/images/logo.png"
                   alt={`${SITE_CONFIG.brand.fullName} Logo`}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
               </div>
               <div className="text-left hidden sm:block">

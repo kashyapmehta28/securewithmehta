@@ -34,9 +34,13 @@ export const Contact: React.FC<ContactProps> = ({
             
             {/* Primary Office Card */}
             <div className="bg-white rounded-2xl p-5 sm:p-7 border border-brand-borderSubtle shadow-soft-sm">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-xl bg-brand-forest text-brand-accentYellow flex items-center justify-center flex-shrink-0 font-bold text-sm">
-                  {SITE_CONFIG.brand.temporaryWordmark}
+              <div className="flex items-center gap-3.5 mb-4">
+                <div className="w-12 h-12 rounded-xl bg-white p-1 border border-brand-borderSubtle flex items-center justify-center flex-shrink-0 shadow-soft-sm">
+                  <img
+                    src="/images/logo.png"
+                    alt={`${SITE_CONFIG.brand.fullName} Logo`}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-brand-dark">

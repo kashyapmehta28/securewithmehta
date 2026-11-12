@@ -16,9 +16,13 @@ export const Footer: React.FC = () => {
           
           {/* Brand Info */}
           <div className="md:col-span-2 lg:col-span-5 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-white/10 text-brand-accentYellow flex items-center justify-center font-black text-sm">
-                {SITE_CONFIG.brand.temporaryWordmark}
+            <div className="flex items-center gap-3.5">
+              <div className="w-12 h-12 rounded-xl bg-white p-1 flex items-center justify-center shadow-soft flex-shrink-0">
+                <img
+                  src="/images/logo.png"
+                  alt={`${SITE_CONFIG.brand.fullName} Logo`}
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div>
                 <div className="text-xl font-bold tracking-tight text-white">
