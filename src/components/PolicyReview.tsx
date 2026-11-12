@@ -37,7 +37,7 @@ export const PolicyReview: React.FC<PolicyReviewProps> = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="bg-white rounded-2xl p-6 sm:p-7 border border-brand-borderSubtle hover:border-brand-accentGreenBorder shadow-soft-sm hover:shadow-soft transition-all flex flex-col justify-between"
+                className="bg-white rounded-2xl p-5 sm:p-7 border border-brand-borderSubtle hover:border-brand-accentGreenBorder shadow-soft-sm hover:shadow-soft transition-all flex flex-col justify-between"
               >
                 <div>
                   <div className="w-12 h-12 rounded-xl bg-brand-accentGreen text-brand-forest flex items-center justify-center mb-5">

@@ -10,13 +10,13 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onExploreClick, onAssistanceClick }) => {
   return (
-    <section id="home" className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-gradient-to-b from-brand-accentGreenLight/40 via-white to-white">
+    <section id="home" className="relative pt-24 sm:pt-32 md:pt-40 pb-14 sm:pb-20 md:pb-28 overflow-hidden bg-gradient-to-b from-brand-accentGreenLight/40 via-white to-white">
       {/* Background Decorative Accents */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-brand-accentGreen/50 rounded-full blur-3xl -z-10 pointer-events-none translate-x-1/3 -translate-y-1/4" />
       <div className="absolute bottom-10 left-0 w-80 h-80 bg-brand-accentYellow/30 rounded-full blur-3xl -z-10 pointer-events-none -translate-x-1/3" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           
           {/* Left Column: Headline & Messaging */}
           <motion.div
@@ -26,15 +26,15 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onAssistanceClick })
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
             {/* Former Name Transition Pill */}
-            <div className="inline-flex flex-wrap items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-accentGreen text-brand-forest border border-brand-accentGreenBorder mb-5 sm:mb-6 shadow-soft-sm max-w-full">
+            <div className="inline-flex flex-wrap items-center gap-1.5 xs:gap-2 px-3 py-1.5 rounded-full bg-brand-accentGreen text-brand-forest border border-brand-accentGreenBorder mb-4 sm:mb-6 shadow-soft-sm max-w-full">
               <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse flex-shrink-0" />
-              <span className="text-[11px] sm:text-xs font-semibold tracking-wide">
+              <span className="text-[10px] xs:text-[11px] sm:text-xs font-semibold tracking-wide">
                 Formerly <span className="font-bold underline decoration-brand-forest/40 underline-offset-2">Mehta Associates</span> • Now <span className="font-bold">Secure With Mehta</span>
               </span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-brand-dark tracking-tight leading-[1.15] mb-4 sm:mb-6">
+            <h1 className="text-2xl xs:text-3xl sm:text-5xl lg:text-6xl font-extrabold text-brand-dark tracking-tight leading-[1.18] sm:leading-[1.15] mb-3.5 sm:mb-6">
               Protection for What Matters.{' '}
               <span className="text-brand-forest inline-block relative">
                 Guidance You Can Trust.
@@ -43,13 +43,13 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onAssistanceClick })
             </h1>
 
             {/* Sub-headline */}
-            <p className="text-base sm:text-lg lg:text-xl text-brand-muted leading-relaxed mb-5 sm:mb-6 max-w-2xl font-normal">
+            <p className="text-sm sm:text-lg lg:text-xl text-brand-muted leading-relaxed mb-4 sm:mb-6 max-w-2xl font-normal">
               {SITE_CONFIG.hero.subheadline} From family health and life policies to complex factory, warehouse, and commercial liability portfolios.
             </p>
 
             {/* Transition Quotation Box */}
-            <div className="mb-6 sm:mb-8 p-3.5 sm:p-4 rounded-2xl bg-brand-accentGreenLight/90 border border-brand-accentGreenBorder max-w-2xl flex items-start gap-3 shadow-soft-sm">
-              <span className="text-xl sm:text-2xl text-brand-forest leading-none font-serif select-none mt-0.5">“</span>
+            <div className="mb-6 sm:mb-8 p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-brand-accentGreenLight/90 border border-brand-accentGreenBorder max-w-2xl flex items-start gap-2.5 sm:gap-3 shadow-soft-sm">
+              <span className="text-lg sm:text-2xl text-brand-forest leading-none font-serif select-none mt-0.5">“</span>
               <p className="text-xs sm:text-sm text-brand-dark/90 italic leading-relaxed">
                 Earlier known as <strong>Mehta Associates</strong>, our firm is now <strong>Secure With Mehta</strong> — carrying forward 39 years of trusted, personalized insurance guidance under our renewed identity.
               </p>
@@ -60,7 +60,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onAssistanceClick })
               <button
                 type="button"
                 onClick={onAssistanceClick}
-                className="inline-flex items-center justify-center gap-3 px-6 py-3.5 sm:px-7 sm:py-4 rounded-xl bg-brand-forest hover:bg-brand-forestHover active:bg-brand-forestHover text-white font-semibold text-sm sm:text-base shadow-soft hover:shadow-soft-lg transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-forest group"
+                className="w-full sm:w-auto min-h-[48px] inline-flex items-center justify-center gap-2.5 px-6 py-3.5 sm:px-7 sm:py-4 rounded-xl bg-brand-forest hover:bg-brand-forestHover active:bg-brand-forestHover active:scale-[0.98] text-white font-semibold text-sm sm:text-base shadow-soft hover:shadow-soft-lg transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-forest group"
               >
                 <span>Get Insurance Assistance</span>
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-brand-accentYellow group-hover:translate-x-1 transition-transform" />
@@ -69,7 +69,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onAssistanceClick })
               <button
                 type="button"
                 onClick={onExploreClick}
-                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 sm:px-6 sm:py-4 rounded-xl bg-white hover:bg-brand-accentGreenLight active:bg-brand-accentGreen text-brand-dark font-semibold text-sm sm:text-base border border-brand-borderSubtle hover:border-brand-accentGreenBorder transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-forest"
+                className="w-full sm:w-auto min-h-[48px] inline-flex items-center justify-center gap-2 px-5 py-3.5 sm:px-6 sm:py-4 rounded-xl bg-white hover:bg-brand-accentGreenLight active:bg-brand-accentGreen active:scale-[0.98] text-brand-dark font-semibold text-sm sm:text-base border border-brand-borderSubtle hover:border-brand-accentGreenBorder transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-forest"
               >
                 <FileText className="w-4 h-4 sm:w-5 sm:h-5 text-brand-forest" />
                 <span>Explore Services</span>
@@ -96,12 +96,12 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onAssistanceClick })
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="relative w-full max-w-md">
+            <div className="relative w-full max-w-sm sm:max-w-md">
               
               {/* Outer Decorative Glow Card */}
               <div className="absolute -inset-1.5 bg-gradient-to-tr from-brand-accentGreen to-brand-accentYellow/80 rounded-3xl blur-xl opacity-70 group-hover:opacity-100 transition duration-500" />
               
-              <div className="relative bg-white rounded-3xl p-6 sm:p-7 shadow-soft-lg border border-brand-borderSubtle">
+              <div className="relative bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-7 shadow-soft-lg border border-brand-borderSubtle">
                 
                 {/* Profile Photo Area */}
                 <div className="relative w-full aspect-[3/3.8] sm:aspect-[3/3.9] rounded-2xl overflow-hidden bg-gradient-to-b from-brand-accentGreenLight to-brand-accentGreen border border-brand-accentGreenBorder shadow-inner group">

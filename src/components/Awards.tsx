@@ -240,14 +240,14 @@ export const Awards: React.FC = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.96 }}
                 transition={{ duration: 0.2 }}
-                className="flex flex-col items-center justify-center max-h-[74vh] max-w-full px-2 sm:px-12"
+                className="flex flex-col items-center justify-center max-h-[70vh] sm:max-h-[74vh] max-w-full px-2 sm:px-12"
               >
                 <img
                   src={AWARDS_GALLERY[selectedIndex].image}
                   alt={AWARDS_GALLERY[selectedIndex].alt}
-                  className="max-h-[60vh] sm:max-h-[66vh] w-auto max-w-full rounded-xl sm:rounded-2xl shadow-2xl object-contain border border-white/10 bg-white"
+                  className="max-h-[48vh] xs:max-h-[52vh] sm:max-h-[66vh] w-auto max-w-full rounded-xl sm:rounded-2xl shadow-2xl object-contain border border-white/10 bg-white"
                 />
-                <p className="mt-2.5 sm:mt-3 text-center text-xs sm:text-sm font-medium text-white/90 max-w-2xl px-2 sm:px-4 leading-snug">
+                <p className="mt-2 sm:mt-3 text-center text-xs sm:text-sm font-medium text-white/90 max-w-2xl px-2 sm:px-4 leading-snug line-clamp-2 sm:line-clamp-none">
                   {AWARDS_GALLERY[selectedIndex].alt}
                 </p>
               </motion.div>

@@ -19,15 +19,23 @@ export const Navbar: React.FC<NavbarProps> = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Lock background scroll when mobile drawer is open
+  // Lock background scroll when mobile drawer is open and support Escape key
   useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
     if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden';
+      window.addEventListener('keydown', handleKeyDown);
     } else {
       document.body.style.overflow = '';
     }
     return () => {
       document.body.style.overflow = '';
+      window.removeEventListener('keydown', handleKeyDown);
     };
   }, [isMobileMenuOpen]);
 
@@ -69,7 +77,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
             className="flex items-center gap-3 sm:gap-3.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-forest rounded-xl p-1 flex-shrink-0"
           >
             {/* Logo Image */}
-            <div className="flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-brand-forest text-white shadow-soft group-hover:scale-105 group-hover:shadow-soft-lg transition-all duration-200 border-2 border-brand-accentGreenBorder/60 flex-shrink-0 overflow-hidden">
+            <div className="flex items-center justify-center w-11 h-11 xs:w-12 xs:h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-brand-forest text-white shadow-soft group-hover:scale-105 group-hover:shadow-soft-lg transition-all duration-200 border-2 border-brand-accentGreenBorder/60 flex-shrink-0 overflow-hidden">
               {!logoError ? (
                 <img
                   src="/favicon.svg"
@@ -78,14 +86,14 @@ export const Navbar: React.FC<NavbarProps> = () => {
                   onError={() => setLogoError(true)}
                 />
               ) : (
-                <span className="font-black text-lg sm:text-2xl tracking-wider text-brand-accentYellow">
+                <span className="font-black text-base xs:text-lg sm:text-2xl tracking-wider text-brand-accentYellow">
                   {SITE_CONFIG.brand.temporaryWordmark}
                 </span>
               )}
             </div>
 
             {/* Brand Name (Small Size) */}
-            <span className="font-bold text-xs sm:text-sm md:text-base text-brand-dark tracking-tight leading-tight group-hover:text-brand-forest transition-colors max-w-[130px] xs:max-w-[200px] sm:max-w-none truncate">
+            <span className="font-bold text-xs xs:text-sm sm:text-sm md:text-base text-brand-dark tracking-tight leading-tight group-hover:text-brand-forest transition-colors max-w-[125px] xs:max-w-[190px] sm:max-w-none truncate">
               {SITE_CONFIG.brand.fullName}
             </span>
           </a>
@@ -133,11 +141,11 @@ export const Navbar: React.FC<NavbarProps> = () => {
           </div>
 
           {/* Tablet & Mobile Header Actions (< 1024px) */}
-          <div className="flex items-center gap-2 lg:hidden">
+          <div className="flex items-center gap-1.5 xs:gap-2 lg:hidden">
             {/* Tablet-friendly Quick Call */}
             <a
               href={SITE_CONFIG.contacts.numbers[0].tel}
-              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-brand-borderSubtle hover:border-brand-accentGreenBorder text-brand-forest text-xs font-semibold bg-white shadow-soft-sm"
+              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-brand-borderSubtle hover:border-brand-accentGreenBorder text-brand-forest text-xs font-semibold bg-white shadow-soft-sm active:scale-95 transition-transform"
               aria-label="Direct Call"
             >
               <Phone className="w-3.5 h-3.5 text-brand-forest" />
@@ -148,7 +156,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
             <a
               href="#inquiry-form"
               onClick={(e) => scrollToSection(e, '#inquiry-form')}
-              className="px-3 sm:px-3.5 py-1.5 rounded-lg bg-brand-forest text-white text-xs font-semibold hover:bg-brand-forestHover transition-colors shadow-soft-sm"
+              className="px-2.5 xs:px-3 sm:px-3.5 py-1.5 rounded-lg bg-brand-forest text-white text-xs font-semibold hover:bg-brand-forestHover active:scale-95 transition-all shadow-soft-sm min-h-[36px] flex items-center"
             >
               Assistance
             </a>
@@ -157,7 +165,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
             <button
               type="button"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 rounded-lg text-brand-dark hover:bg-brand-accentGreen focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-forest transition-colors"
+              className="p-2 min-w-[40px] min-h-[40px] flex items-center justify-center rounded-lg text-brand-dark hover:bg-brand-accentGreen active:bg-brand-accentGreen focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-forest transition-colors"
               aria-label="Toggle navigation menu"
               aria-expanded={isMobileMenuOpen}
             >
@@ -172,10 +180,10 @@ export const Navbar: React.FC<NavbarProps> = () => {
       {isMobileMenuOpen && (
         <>
           <div
-            className="fixed inset-0 top-[60px] sm:top-[68px] bg-black/40 backdrop-blur-xs z-40 lg:hidden animate-in fade-in duration-200"
+            className="fixed inset-0 top-[56px] sm:top-[68px] bg-black/40 backdrop-blur-xs z-40 lg:hidden animate-in fade-in duration-200"
             onClick={() => setIsMobileMenuOpen(false)}
           />
-          <div className="relative z-50 lg:hidden bg-white border-b border-brand-borderSubtle shadow-soft-lg px-4 pt-3 pb-6 max-h-[calc(100vh-70px)] overflow-y-auto animate-in slide-in-from-top-4 duration-200">
+          <div className="relative z-50 lg:hidden bg-white border-b border-brand-borderSubtle shadow-soft-lg px-4 pt-3 pb-8 max-h-[calc(100vh-64px)] overflow-y-auto overscroll-contain animate-in slide-in-from-top-4 duration-200">
             <div className="flex flex-col space-y-1 mb-4">
               {navLinks.map((link) => (
                 <a

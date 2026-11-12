@@ -173,9 +173,9 @@ export const Reviews: React.FC = () => {
   const handleTouchEnd = () => {
     if (touchStartXRef.current === null || touchEndXRef.current === null) return;
     const diff = touchStartXRef.current - touchEndXRef.current;
-    if (diff > 50) {
+    if (diff > 40) {
       handleNext();
-    } else if (diff < -50) {
+    } else if (diff < -40) {
       handlePrev();
     }
     touchStartXRef.current = null;
@@ -229,7 +229,7 @@ export const Reviews: React.FC = () => {
 
         {/* Carousel Container */}
         <div
-          className="relative px-2 sm:px-6 md:px-10 lg:px-4"
+          className="relative px-2 sm:px-6 md:px-10 lg:px-4 touch-pan-y"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
           onTouchStart={handleTouchStart}
@@ -342,7 +342,7 @@ export const Reviews: React.FC = () => {
                 type="button"
                 onClick={handlePrev}
                 aria-label="Previous review"
-                className="sm:hidden p-2.5 rounded-full bg-white text-brand-forest border border-brand-borderSubtle shadow-soft active:bg-brand-accentGreen active:scale-95 transition-all"
+                className="sm:hidden min-w-[42px] min-h-[42px] flex items-center justify-center p-2.5 rounded-full bg-white text-brand-forest border border-brand-borderSubtle shadow-soft active:bg-brand-accentGreen active:scale-95 transition-all focus:outline-none"
               >
                 <ChevronLeft className="w-4 h-4" />
               </button>
@@ -358,10 +358,10 @@ export const Reviews: React.FC = () => {
                       setCurrentIndex(dotIdx);
                     }}
                     aria-label={`Jump to review ${dotIdx + 1}`}
-                    className={`h-2 sm:h-2.5 rounded-full transition-all duration-300 ${
+                    className={`h-2.5 sm:h-2.5 rounded-full transition-all duration-300 ${
                       activeDotIndex === dotIdx
                         ? 'w-6 sm:w-8 bg-brand-forest shadow-soft-sm'
-                        : 'w-2 sm:w-2.5 bg-brand-forest/20 hover:bg-brand-forest/40'
+                        : 'w-2.5 sm:w-2.5 bg-brand-forest/20 hover:bg-brand-forest/40'
                     }`}
                   />
                 ))}
@@ -372,7 +372,7 @@ export const Reviews: React.FC = () => {
                 type="button"
                 onClick={handleNext}
                 aria-label="Next review"
-                className="sm:hidden p-2.5 rounded-full bg-white text-brand-forest border border-brand-borderSubtle shadow-soft active:bg-brand-accentGreen active:scale-95 transition-all"
+                className="sm:hidden min-w-[42px] min-h-[42px] flex items-center justify-center p-2.5 rounded-full bg-white text-brand-forest border border-brand-borderSubtle shadow-soft active:bg-brand-accentGreen active:scale-95 transition-all focus:outline-none"
               >
                 <ChevronRight className="w-4 h-4" />
               </button>

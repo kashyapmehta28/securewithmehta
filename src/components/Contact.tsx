@@ -33,7 +33,7 @@ export const Contact: React.FC<ContactProps> = ({
           <div className="lg:col-span-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6 text-left">
             
             {/* Primary Office Card */}
-            <div className="bg-white rounded-2xl p-6 sm:p-7 border border-brand-borderSubtle shadow-soft-sm">
+            <div className="bg-white rounded-2xl p-5 sm:p-7 border border-brand-borderSubtle shadow-soft-sm">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-xl bg-brand-forest text-brand-accentYellow flex items-center justify-center flex-shrink-0 font-bold text-sm">
                   {SITE_CONFIG.brand.temporaryWordmark}

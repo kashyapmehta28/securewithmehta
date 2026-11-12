@@ -9,7 +9,7 @@ export const About: React.FC = () => {
           
           {/* Left Column: Owner Portrait (Exact Height Match with Text) */}
           <div className="md:col-span-5 flex flex-col">
-            <div className="relative h-full min-h-[360px] sm:min-h-[420px] rounded-2xl overflow-hidden shadow-soft-lg border border-brand-borderSubtle group bg-brand-accentGreenLight flex flex-col justify-end">
+            <div className="relative h-full min-h-[290px] xs:min-h-[320px] sm:min-h-[420px] rounded-2xl overflow-hidden shadow-soft-lg border border-brand-borderSubtle group bg-brand-accentGreenLight flex flex-col justify-end">
               {/* Photo filling 100% of the column height */}
               <img
                 src="/images/kashyap-mehta-blazer.jpg"

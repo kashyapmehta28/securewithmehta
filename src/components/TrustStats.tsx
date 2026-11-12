@@ -62,7 +62,7 @@ export const TrustStats: React.FC = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-brand-accentGreenLight/60 rounded-xl sm:rounded-2xl p-4 sm:p-7 border border-brand-borderSubtle hover:border-brand-accentGreenBorder transition-all duration-300 text-center"
             >
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-forest mb-1.5 sm:mb-2">
+              <div className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-black text-brand-forest mb-1.5 sm:mb-2">
                 <AnimatedCounter value={stat.value} suffix={stat.suffix} />
               </div>
               

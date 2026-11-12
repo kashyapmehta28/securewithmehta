@@ -40,7 +40,7 @@ export const Process: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-40px' }}
                   transition={{ duration: 0.5, delay: idx * 0.12 }}
-                  className="bg-white rounded-2xl p-6 sm:p-7 border border-brand-borderSubtle hover:border-brand-accentGreenBorder shadow-soft-sm hover:shadow-soft transition-all flex flex-col justify-between group"
+                  className="bg-white rounded-2xl p-5 sm:p-7 border border-brand-borderSubtle hover:border-brand-accentGreenBorder shadow-soft-sm hover:shadow-soft transition-all flex flex-col justify-between group"
                 >
                   <div>
                     {/* Top Row: Step Number + Icon */}

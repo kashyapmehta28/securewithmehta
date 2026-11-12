@@ -57,7 +57,8 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService, onExploreAl
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.3, delay: index * 0.025 }}
-              className="group relative flex flex-col justify-between bg-white rounded-xl sm:rounded-2xl p-3.5 sm:p-5 border border-brand-borderSubtle hover:border-brand-accentGreenBorder shadow-soft-sm hover:shadow-soft hover:-translate-y-1 transition-all duration-200"
+              onClick={() => onSelectService(service.title)}
+              className="group relative flex flex-col justify-between bg-white rounded-xl sm:rounded-2xl p-3.5 sm:p-5 border border-brand-borderSubtle hover:border-brand-accentGreenBorder shadow-soft-sm hover:shadow-soft hover:-translate-y-1 active:scale-[0.98] transition-all duration-200 cursor-pointer"
             >
               <div>
                 {/* Icon Box */}
@@ -73,14 +74,10 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService, onExploreAl
 
               {/* Inquire Action Link */}
               <div className="mt-3 sm:mt-4 pt-2.5 sm:pt-3 border-t border-brand-borderSubtle/60 flex items-center justify-between">
-                <button
-                  type="button"
-                  onClick={() => onSelectService(service.title)}
-                  className="text-[11px] sm:text-xs font-bold text-brand-forest hover:text-brand-forestHover inline-flex items-center gap-1 group/btn"
-                >
+                <span className="text-[11px] sm:text-xs font-bold text-brand-forest hover:text-brand-forestHover inline-flex items-center gap-1 group/btn">
                   <span>Inquire</span>
                   <ArrowUpRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
-                </button>
+                </span>
               </div>
             </motion.div>
           ))}

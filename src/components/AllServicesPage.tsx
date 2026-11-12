@@ -258,13 +258,14 @@ export const AllServicesPage: React.FC<AllServicesPageProps> = ({ onBack, onSele
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.25, delay: Math.min(index * 0.02, 0.3) }}
-                className="group relative flex flex-col justify-between bg-white rounded-2xl p-6 border border-brand-borderSubtle hover:border-brand-accentGreenBorder shadow-soft-sm hover:shadow-soft hover:-translate-y-1 transition-all duration-200"
+                onClick={() => onSelectService(service.title)}
+                className="group relative flex flex-col justify-between bg-white rounded-2xl p-5 sm:p-6 border border-brand-borderSubtle hover:border-brand-accentGreenBorder shadow-soft-sm hover:shadow-soft hover:-translate-y-1 active:scale-[0.98] transition-all duration-200 cursor-pointer"
               >
                 <div>
                   {/* Card Top: Icon & Category Badge */}
                   <div className="flex items-start justify-between gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-xl bg-brand-accentGreen text-brand-forest flex items-center justify-center group-hover:bg-brand-forest group-hover:text-brand-accentYellow transition-colors duration-200">
-                      <DynamicIcon name={service.icon} className="w-6 h-6" />
+                    <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-brand-accentGreen text-brand-forest flex items-center justify-center group-hover:bg-brand-forest group-hover:text-brand-accentYellow transition-colors duration-200">
+                      <DynamicIcon name={service.icon} className="w-5 h-5 sm:w-6 sm:h-6" />
                     </div>
                     <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full bg-brand-accentGreenLight text-brand-forest border border-brand-accentGreenBorder/60">
                       {service.category}
@@ -272,7 +273,7 @@ export const AllServicesPage: React.FC<AllServicesPageProps> = ({ onBack, onSele
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-lg font-bold text-brand-dark group-hover:text-brand-forest transition-colors leading-snug mb-2">
+                  <h3 className="text-base sm:text-lg font-bold text-brand-dark group-hover:text-brand-forest transition-colors leading-snug mb-2">
                     {service.title}
                   </h3>
 
@@ -296,14 +297,10 @@ export const AllServicesPage: React.FC<AllServicesPageProps> = ({ onBack, onSele
 
                 {/* Bottom Action: Inquire */}
                 <div className="pt-3 border-t border-brand-borderSubtle/60 flex items-center justify-between gap-3">
-                  <button
-                    type="button"
-                    onClick={() => onSelectService(service.title)}
-                    className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-brand-accentGreenLight hover:bg-brand-forest text-brand-forest hover:text-white font-bold text-xs tracking-wide border border-brand-accentGreenBorder hover:border-transparent transition-all group/btn shadow-soft-sm"
-                  >
+                  <span className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-brand-accentGreenLight group-hover:bg-brand-forest text-brand-forest group-hover:text-white font-bold text-xs tracking-wide border border-brand-accentGreenBorder group-hover:border-transparent transition-all group/btn shadow-soft-sm">
                     <span>Request Advice for {service.title.split(' ')[0]}</span>
                     <ArrowUpRight className="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
-                  </button>
+                  </span>
                 </div>
               </motion.div>
             ))}
