@@ -59,10 +59,11 @@ export const Navbar: React.FC<NavbarProps> = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-soft border-b border-brand-borderSubtle py-2 sm:py-2.5'
-          : 'bg-white/90 backdrop-blur-sm border-b border-brand-borderSubtle/60 py-2.5 sm:py-3.5'
-        }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
+        isScrolled
+          ? 'bg-white/95 backdrop-blur-md shadow-soft border-b border-brand-borderSubtle py-1.5 sm:py-2'
+          : 'bg-white/95 backdrop-blur-sm border-b border-brand-borderSubtle/60 py-3 sm:py-4 md:py-4.5'
+      }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
@@ -71,15 +72,21 @@ export const Navbar: React.FC<NavbarProps> = () => {
           <a
             href="#home"
             onClick={(e) => scrollToSection(e, '#home')}
-            className="flex items-center gap-3 sm:gap-3.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-forest rounded-xl p-1 flex-shrink-0"
+            className="flex items-center gap-2.5 sm:gap-3.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-forest rounded-xl p-1 flex-shrink-0"
           >
-            {/* Logo Image */}
-            <div className="flex items-center justify-center w-11 h-11 xs:w-12 xs:h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-white shadow-soft group-hover:scale-105 group-hover:shadow-soft-lg transition-all duration-200 border border-brand-borderSubtle flex-shrink-0 p-1">
+            {/* Logo Image with Dynamic Size: Big on Home / Top, Compact when Scrolled */}
+            <div
+              className={`flex items-center justify-center rounded-xl sm:rounded-2xl bg-white shadow-soft group-hover:scale-105 group-hover:shadow-soft-lg transition-all duration-300 ease-in-out border border-brand-borderSubtle flex-shrink-0 p-1 sm:p-1.5 ${
+                isScrolled
+                  ? 'w-10 h-10 xs:w-11 xs:h-11 sm:w-12 sm:h-12'
+                  : 'w-14 h-14 xs:w-16 xs:h-16 sm:w-20 sm:h-20 md:w-22 md:h-22 shadow-soft-md'
+              }`}
+            >
               {!logoError ? (
                 <img
                   src="/images/logo.png"
                   alt={`${SITE_CONFIG.brand.fullName} Logo`}
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-contain transition-transform duration-300"
                   onError={() => setLogoError(true)}
                 />
               ) : (
@@ -89,10 +96,23 @@ export const Navbar: React.FC<NavbarProps> = () => {
               )}
             </div>
 
-            {/* Brand Name (Small Size) */}
-            <span className="font-bold text-xs xs:text-sm sm:text-sm md:text-base text-brand-dark tracking-tight leading-tight group-hover:text-brand-forest transition-colors max-w-[125px] xs:max-w-[190px] sm:max-w-none truncate">
-              {SITE_CONFIG.brand.fullName}
-            </span>
+            {/* Brand Name Text: Scales with Logo */}
+            <div className="flex flex-col justify-center transition-all duration-300">
+              <span
+                className={`font-extrabold text-brand-dark tracking-tight leading-tight group-hover:text-brand-forest transition-all duration-300 max-w-[130px] xs:max-w-[190px] sm:max-w-none truncate ${
+                  isScrolled
+                    ? 'text-xs xs:text-sm sm:text-sm md:text-base'
+                    : 'text-sm xs:text-base sm:text-lg md:text-xl'
+                }`}
+              >
+                {SITE_CONFIG.brand.fullName}
+              </span>
+              {!isScrolled && (
+                <span className="hidden sm:block text-[11px] md:text-xs text-brand-muted font-medium transition-all duration-300 mt-0.5">
+                  Life & General Insurance Consultancy
+                </span>
+              )}
+            </div>
           </a>
 
           {/* Desktop Navigation Links - Fixed Single Line (whitespace-nowrap) */}
@@ -177,7 +197,9 @@ export const Navbar: React.FC<NavbarProps> = () => {
       {isMobileMenuOpen && (
         <>
           <div
-            className="fixed inset-0 top-[56px] sm:top-[68px] bg-black/40 backdrop-blur-xs z-40 lg:hidden animate-in fade-in duration-200"
+            className={`fixed inset-0 bg-black/40 backdrop-blur-xs z-40 lg:hidden animate-in fade-in duration-200 ${
+              isScrolled ? 'top-[52px] sm:top-[60px]' : 'top-[68px] sm:top-[88px] md:top-[98px]'
+            }`}
             onClick={() => setIsMobileMenuOpen(false)}
           />
           <div className="relative z-50 lg:hidden bg-white border-b border-brand-borderSubtle shadow-soft-lg px-4 pt-3 pb-8 max-h-[calc(100vh-64px)] overflow-y-auto overscroll-contain animate-in slide-in-from-top-4 duration-200">
