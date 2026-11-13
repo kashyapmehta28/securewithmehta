@@ -206,9 +206,6 @@ export const Reviews: React.FC = () => {
             Trusted by Families & Businesses
           </h2>
 
-          <p className="mt-3 text-base sm:text-lg text-brand-muted max-w-2xl mx-auto">
-            Authentic experiences, claim assistance reviews, and advisory stories from long-standing policyholders across Mumbai and Pan-India.
-          </p>
 
           {/* Social Proof & Rating Pill */}
           <div className="mt-5 inline-flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm font-semibold text-brand-forest bg-white/90 px-4 py-2 rounded-full border border-brand-borderSubtle shadow-soft-sm">

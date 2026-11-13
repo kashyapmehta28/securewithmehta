@@ -40,9 +40,7 @@ export const PolicyReview: React.FC<PolicyReviewProps> = ({ onBookReview }) => {
             </span>
           </h2>
 
-          <p className="mt-3 text-xs sm:text-base text-brand-muted max-w-xl mx-auto leading-relaxed">
-            Unbiased fine-print audits uncovering room-rent caps, waiting period exclusions, and claim settlement pitfalls.
-          </p>
+
         </div>
 
         {/* 2x2 Box on Phone, 2x2 on Tablet, 4x1 on Laptop */}

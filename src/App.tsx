@@ -14,6 +14,7 @@ import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { FloatingContactButtons } from './components/FloatingContactButtons';
 import { AllServicesPage } from './components/AllServicesPage';
+import { QuickConsultModal } from './components/QuickConsultModal';
 
 export const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<'home' | 'all-services'>(() => {
@@ -94,6 +95,7 @@ export const App: React.FC = () => {
           onSelectService={(service) => scrollToInquiry(service)}
         />
         <FloatingContactButtons />
+        <QuickConsultModal />
       </div>
     );
   }
@@ -153,6 +155,9 @@ export const App: React.FC = () => {
 
       {/* Floating Call & WhatsApp Buttons */}
       <FloatingContactButtons />
+
+      {/* 5-Second One-Time Quick Consultation Popup */}
+      <QuickConsultModal />
     </div>
   );
 };

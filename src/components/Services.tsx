@@ -84,16 +84,80 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService, onExploreAl
         </div>
 
         {/* Explore All Services Button (Navigates to dedicated page) */}
-        <div className="text-center pt-2">
-          <button
-            type="button"
-            id="explore-services-btn"
-            onClick={onExploreAll}
-            className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-xl bg-brand-forest hover:bg-brand-forestHover text-white font-bold text-sm tracking-wide shadow-soft hover:shadow-soft-lg hover:scale-[1.02] active:scale-[0.98] transition-all group"
-          >
-            <span>Explore All 38+ Services</span>
-            <ArrowRight className="w-4 h-4 text-brand-accentYellow group-hover:translate-x-1.5 transition-transform" />
-          </button>
+        <div className="text-center pt-4 sm:pt-6">
+          <div className="relative inline-flex flex-col items-center">
+            
+            {/* Pulsing Gradient Aura Glow */}
+            <motion.div
+              animate={{
+                scale: [1, 1.06, 1],
+                opacity: [0.45, 0.85, 0.45]
+              }}
+              transition={{
+                duration: 2.2,
+                repeat: Infinity,
+                ease: 'easeInOut'
+              }}
+              className="absolute -inset-1 sm:-inset-1.5 rounded-2xl bg-gradient-to-r from-emerald-500 via-amber-400 to-emerald-600 blur-md pointer-events-none"
+            />
+
+            {/* Top Floating Badge */}
+            <motion.div
+              animate={{ y: [0, -3, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+              className="mb-2.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-accentYellow text-brand-dark text-[11px] sm:text-xs font-extrabold shadow-soft border border-amber-300 relative z-10"
+            >
+              <Sparkles className="w-3.5 h-3.5 text-amber-700 animate-pulse" />
+              <span>Full Portfolio Access</span>
+              <span className="relative flex h-2 w-2 ml-0.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-600" />
+              </span>
+            </motion.div>
+
+            {/* Main Animated Button */}
+            <motion.button
+              type="button"
+              id="explore-services-btn"
+              onClick={onExploreAll}
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.97 }}
+              className="relative inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-4 rounded-2xl bg-gradient-to-r from-brand-forest via-[#16422F] to-brand-forest hover:from-brand-forestHover hover:to-brand-forestHover text-white font-extrabold text-sm sm:text-base tracking-wide shadow-soft-lg transition-all duration-300 overflow-hidden group cursor-pointer border border-emerald-400/40 z-10"
+            >
+              {/* Animated Continuous Shimmer Light Ray */}
+              <motion.div
+                animate={{
+                  x: ['-100%', '220%']
+                }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 2.5,
+                  ease: 'easeInOut',
+                  repeatDelay: 0.8
+                }}
+                className="absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/25 to-transparent skew-x-12 pointer-events-none"
+              />
+
+              <span className="text-white drop-shadow-sm font-extrabold">Explore All 38+ Services</span>
+
+              <span className="px-2 py-0.5 rounded-md bg-brand-accentYellow text-brand-dark text-xs font-black shadow-sm group-hover:bg-yellow-300 transition-colors">
+                38+ Lines
+              </span>
+
+              <motion.div
+                animate={{ x: [0, 4, 0] }}
+                transition={{ repeat: Infinity, duration: 1.2, ease: 'easeInOut' }}
+              >
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-brand-accentYellow group-hover:translate-x-1 transition-transform" />
+              </motion.div>
+            </motion.button>
+
+            {/* Helpful Sub-Caption */}
+            <p className="mt-2.5 text-xs text-brand-muted font-medium flex items-center gap-1.5 text-center">
+              <span>Click to view specialized covers across Health, Life, Fire, Marine, Liability, Gadgets & more</span>
+            </p>
+
+          </div>
         </div>
 
       </div>

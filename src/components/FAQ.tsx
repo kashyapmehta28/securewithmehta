@@ -91,9 +91,6 @@ export const FAQ: React.FC = () => {
             Frequently Asked Questions
           </h2>
           
-          <p className="text-base sm:text-lg text-brand-muted leading-relaxed font-normal">
-            Straightforward answers regarding our insurance advisory process, categories handled, policy audit methodology, and claims guidance.
-          </p>
         </div>
 
         {/* 4 Balanced Rows: 4 questions Left, 4 questions Right */}

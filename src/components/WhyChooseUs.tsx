@@ -60,7 +60,6 @@ export const WhyChooseUs: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-xs sm:text-base text-brand-muted font-normal max-w-2xl mx-auto leading-relaxed"
           >
-            Independent advisory dedicated entirely to your family’s and company’s genuine security, free from monthly corporate sales quotas.
           </motion.p>
         </div>
 
