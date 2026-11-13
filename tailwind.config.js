@@ -28,6 +28,7 @@ export default {
         display: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
         serif: ['"Playfair Display"', 'Georgia', 'serif'],
         quote: ['"Playfair Display"', 'Georgia', 'serif'],
+        casual: ['"Caveat"', '"Kalam"', 'cursive', 'sans-serif'],
       },
       boxShadow: {
         'soft-sm': '0 2px 8px -2px rgba(23, 35, 29, 0.05), 0 1px 4px -1px rgba(23, 35, 29, 0.03)',

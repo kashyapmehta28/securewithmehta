@@ -80,7 +80,6 @@ export const SITE_CONFIG = {
   },
   hero: {
     headline: "Protection for What Matters. Guidance You Can Trust.",
-    subheadline: "Backed by 39 years of trusted business heritage in Mumbai, Kashyap Mehta provides independent, thorough, and personalized guidance across Life and General Insurance portfolios.",
     badges: [
       "Established Advisory",
       "Mumbai Base",

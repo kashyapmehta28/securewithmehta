@@ -103,28 +103,42 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onAssistanceClick })
               {renderConsultantCard()}
             </div>
 
-            {/* 3. Hero Page Content: Headline, Subheadline, Transition Quote, CTA Buttons, Badges */}
-            {/* Main Headline */}
-            <h1 className="text-2xl xs:text-3xl sm:text-5xl lg:text-6xl font-extrabold text-brand-dark tracking-tight leading-[1.18] sm:leading-[1.15] mb-3.5 sm:mb-6">
-              Protection for What Matters.{' '}
-              <span className="text-brand-forest inline-block relative">
+            {/* 3. Hero Page Content: Headline in Casual Handwritten Font with Animation */}
+            <motion.h1
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              className="font-casual text-3xl xs:text-4xl sm:text-6xl lg:text-7xl font-bold text-brand-dark tracking-normal leading-[1.25] sm:leading-[1.2] mb-4 sm:mb-6 select-none"
+            >
+              <motion.span
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="inline-block drop-shadow-xs"
+              >
+                Protection for What Matters.
+              </motion.span>{' '}
+              <motion.span
+                initial={{ opacity: 0, scale: 0.96 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.55, delay: 0.3 }}
+                className="text-brand-forest inline-block relative font-bold"
+              >
                 Guidance You Can Trust.
-                <span className="absolute left-0 bottom-1 w-full h-2 sm:h-2.5 bg-brand-accentYellow/70 -z-10 rounded-sm" />
-              </span>
-            </h1>
+                {/* Animated Hand-Drawn Highlight Accent */}
+                <motion.span
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ duration: 0.7, delay: 0.5, ease: 'easeOut' }}
+                  className="absolute left-0 bottom-1 sm:bottom-2 w-full h-3 sm:h-4 bg-brand-accentYellow/80 -z-10 rounded-sm origin-left"
+                />
+              </motion.span>
+            </motion.h1>
 
             {/* Sub-headline */}
-            <p className="text-sm sm:text-lg lg:text-xl text-brand-muted leading-relaxed mb-4 sm:mb-6 max-w-2xl font-normal">
-              {SITE_CONFIG.hero.subheadline} From family health and life policies to complex factory, warehouse, and commercial liability portfolios.
-            </p>
 
-            {/* Transition Quotation Box */}
-            <div className="mb-6 sm:mb-8 p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-brand-accentGreenLight/90 border border-brand-accentGreenBorder max-w-2xl flex items-start gap-2.5 sm:gap-3 shadow-soft-sm">
-              <span className="text-lg sm:text-2xl text-brand-forest leading-none font-serif select-none mt-0.5">“</span>
-              <p className="text-xs sm:text-sm text-brand-dark/90 italic leading-relaxed">
-                Earlier known as <strong>Mehta Associates</strong>, our firm is now <strong>Secure With Mehta</strong> — carrying forward 39 years of trusted, personalized insurance guidance under our renewed identity.
-              </p>
-            </div>
+
+
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mb-8 sm:mb-10">
