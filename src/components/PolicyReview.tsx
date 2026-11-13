@@ -48,9 +48,11 @@ export const PolicyReview: React.FC<PolicyReviewProps> = () => {
                     {feature.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-brand-muted leading-relaxed">
-                    {feature.description}
-                  </p>
+                  {'description' in feature && (feature as any).description ? (
+                    <p className="text-xs sm:text-sm text-brand-muted leading-relaxed">
+                      {(feature as any).description}
+                    </p>
+                  ) : null}
                 </div>
 
                 <div className="mt-5 pt-3 border-t border-brand-borderSubtle flex items-center gap-1.5 text-xs text-brand-forest font-semibold">

@@ -643,25 +643,21 @@ export const PROCESS_STEPS = [
   {
     step: "01",
     title: "Share Your Requirement",
-    description: "Connect via WhatsApp, direct phone call, or our structured inquiry form outlining your insurance type and priorities.",
     icon: "MessageSquareCheck"
   },
   {
     step: "02",
     title: "Discuss Your Specific Needs",
-    description: "Kashyap Mehta personally reviews your profile, current exposure, family or commercial risk profile to identify necessary covers.",
     icon: "UserCheck"
   },
   {
     step: "03",
     title: "Review Options & Terms",
-    description: "Receive an objective comparison of suitable plans across established insurance companies, highlighting benefits, waiting periods, and exclusions.",
     icon: "FileSpreadsheet"
   },
   {
     step: "04",
     title: "Proceed with Selected Provider",
-    description: "Smooth application support, medical test coordination if required, prompt policy issuance, and lifelong claim-time assistance.",
     icon: "CheckCircle2"
   }
 ];
@@ -702,22 +698,18 @@ export const WHY_CHOOSE_US = [
 export const POLICY_REVIEW_FEATURES = [
   {
     title: "Coverage Adequacy Assessment",
-    description: "Evaluate whether your existing sum insured aligns with today's medical inflation or current commercial replacement costs.",
     icon: "TrendingUp"
   },
   {
     title: "Exclusion & Condition Mapping",
-    description: "Detailed breakdown of specific disease waiting periods, room-rent capping, copay clauses, and factory peril limits.",
     icon: "Search"
   },
   {
     title: "Claims Advisory & Support Guidance",
-    description: "Guidance on preparing claim files, coordinating cashless authorizations, and interpreting insurer queries. (Note: We do not guarantee claim settlement, which is governed by insurer policy terms).",
     icon: "LifeBuoy"
   },
   {
     title: "Agent Change & Portfolio Consolidation",
-    description: "Assistance for policyholders dissatisfied with their historical service agents seeking professional portfolio management.",
     icon: "RefreshCw"
   }
 ];

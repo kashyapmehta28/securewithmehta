@@ -57,9 +57,11 @@ export const Process: React.FC = () => {
                       {step.title}
                     </h3>
 
-                    <p className="text-xs sm:text-sm text-brand-muted leading-relaxed">
-                      {step.description}
-                    </p>
+                    {'description' in step && (step as any).description ? (
+                      <p className="text-xs sm:text-sm text-brand-muted leading-relaxed">
+                        {(step as any).description}
+                      </p>
+                    ) : null}
                   </div>
 
                   <div className="mt-6 pt-4 border-t border-brand-borderSubtle flex items-center text-xs font-semibold text-brand-forest">
