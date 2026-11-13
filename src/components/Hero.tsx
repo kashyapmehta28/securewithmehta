@@ -103,17 +103,19 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onAssistanceClick })
               {renderConsultantCard()}
             </div>
 
-            {/* 3. Hero Page Content: Headline in Casual Handwritten Font with Animation */}
+            {/* 3. Hero Page Content: Headline in Casual Handwritten Font with Animation (Applied across Mobile, Tablet & Laptop) */}
             <motion.h1
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="font-casual text-3xl xs:text-4xl sm:text-6xl lg:text-7xl font-bold text-brand-dark tracking-normal leading-[1.25] sm:leading-[1.2] mb-4 sm:mb-6 select-none"
+              style={{ fontFamily: "'Caveat', 'Kalam', cursive, sans-serif" }}
+              className="font-casual text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-7xl font-bold text-brand-dark tracking-normal leading-[1.25] sm:leading-[1.18] lg:leading-[1.15] mb-4 sm:mb-6 select-none"
             >
               <motion.span
                 initial={{ opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
+                style={{ fontFamily: "'Caveat', 'Kalam', cursive, sans-serif" }}
                 className="inline-block drop-shadow-xs"
               >
                 Protection for What Matters.
@@ -122,6 +124,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onAssistanceClick })
                 initial={{ opacity: 0, scale: 0.96 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.55, delay: 0.3 }}
+                style={{ fontFamily: "'Caveat', 'Kalam', cursive, sans-serif" }}
                 className="text-brand-forest inline-block relative font-bold"
               >
                 Guidance You Can Trust.
