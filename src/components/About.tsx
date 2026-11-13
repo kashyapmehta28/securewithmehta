@@ -109,20 +109,10 @@ export const About: React.FC = () => {
                 Personalized Guidance Grounded in Four Decades of Trust
               </h2>
 
-              {/* Narrative Paragraphs */}
-              <div className="space-y-3.5 text-sm sm:text-base text-brand-muted leading-relaxed">
-                <p>
-                  In an era dominated by automated insurance portals and algorithm-driven comparisons, <strong className="text-brand-dark font-bold">Kashyap Mehta</strong> and <strong className="text-brand-dark font-bold">Secure With Mehta</strong> <span className="text-brand-dark/70 font-medium">(formerly known as Mehta Associates)</span> bring back what truly matters: direct, human-centered insurance guidance.
-                </p>
-                
-                <p>
-                  Drawing on an established business heritage rooted in Mumbai, the firm specializes exclusively in Life and General Insurance products. Our role is to assist clients in identifying appropriate risk protection, reviewing policy fine print, and evaluating products from all insurance companies across India.
-                </p>
-
-                <p className="mb-0">
-                  Whether you are an individual safeguarding your family’s healthcare and life goals, or a business owner protecting warehousing inventory, factory machinery, and professional liabilities, we help you understand your coverage thoroughly before you commit.
-                </p>
-              </div>
+              {/* Short & Impactful Narrative */}
+              <p className="text-sm sm:text-base text-brand-muted leading-relaxed font-normal">
+                Backed by four decades of business heritage in Mumbai, <strong className="text-brand-dark font-bold">Kashyap Mehta</strong> and <strong className="text-brand-dark font-bold">Secure With Mehta</strong> <span className="text-brand-dark/70 font-medium">(formerly Mehta Associates)</span> provide independent, human-centered guidance across Life and General Insurance portfolios—decoding fine print to safeguard your family and business.
+              </p>
 
               {/* Creative One-Line Quote Card */}
               <motion.div
@@ -137,20 +127,20 @@ export const About: React.FC = () => {
                 
                 {/* Background Watermark Icon */}
                 <div className="absolute -right-3 -bottom-3 text-brand-forest/5 pointer-events-none">
-                  <Quote className="w-20 h-20 rotate-180" />
+                  <Quote className="w-16 h-16 rotate-180" />
                 </div>
 
-                {/* Editorial Quote in Playfair Display Creative Serif */}
-                <p className="font-quote italic text-base sm:text-lg md:text-xl text-brand-dark leading-relaxed pl-2 font-normal">
-                  &ldquo;Insurance is not just a financial contract; it is a solemn promise that your family&rsquo;s future remains protected when life is unpredictable.&rdquo;
+                {/* Editorial Crisp One-Line Quote in Playfair Display Creative Serif */}
+                <p className="font-quote italic text-base sm:text-lg md:text-xl text-brand-dark leading-snug pl-2 font-medium">
+                  &ldquo;Protecting what matters most, with guidance you can trust.&rdquo;
                 </p>
 
-                <div className="mt-3 pl-2 flex items-center justify-between border-t border-brand-borderSubtle/60 pt-2.5">
+                <div className="mt-2.5 pl-2 flex items-center justify-between border-t border-brand-borderSubtle/60 pt-2">
                   <span className="text-xs font-bold text-brand-forest">
                     — Kashyap Mehta, <span className="text-brand-muted font-normal">Founder</span>
                   </span>
                   <span className="text-[10px] font-extrabold uppercase tracking-wider text-emerald-800 bg-brand-accentGreen px-2.5 py-0.5 rounded-full border border-brand-accentGreenBorder">
-                    Advisory Philosophy
+                    Core Commitment
                   </span>
                 </div>
               </motion.div>
