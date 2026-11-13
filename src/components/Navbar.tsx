@@ -1,15 +1,79 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, Phone, ArrowRight, Shield } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import {
+  Menu,
+  X,
+  Phone,
+  ArrowRight,
+  Shield,
+  ChevronDown,
+  HeartPulse,
+  ShieldCheck,
+  Car,
+  AlertCircle,
+  PawPrint,
+  Plane,
+  Sparkles
+} from 'lucide-react';
 import { SITE_CONFIG } from '../data/siteConfig';
 
 interface NavbarProps {
   onSelectService?: (serviceId: string) => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = () => {
+interface NavServiceItem {
+  name: string;
+  subtext: string;
+  icon: React.ComponentType<{ className?: string }>;
+  serviceQuery: string;
+}
+
+const FEATURED_NAV_SERVICES: NavServiceItem[] = [
+  {
+    name: 'Health Insurance',
+    subtext: 'Family Floater, Critical Illness & Senior Care',
+    icon: HeartPulse,
+    serviceQuery: 'Health Insurance'
+  },
+  {
+    name: 'Life Insurance',
+    subtext: 'Pure Term Protection & Guaranteed Legacy',
+    icon: ShieldCheck,
+    serviceQuery: 'Life Insurance'
+  },
+  {
+    name: 'Motor (Car) Insurance',
+    subtext: 'Zero-dep, Engine Protect & Commercial Fleet',
+    icon: Car,
+    serviceQuery: 'Car & Two-Wheeler Insurance'
+  },
+  {
+    name: 'Personal Accident Insurance',
+    subtext: 'Accidental Disability & Income Replacement',
+    icon: AlertCircle,
+    serviceQuery: 'Personal Accident Cover'
+  },
+  {
+    name: 'Pet Insurance',
+    subtext: 'Veterinary Hospitalization & Surgery Cover',
+    icon: PawPrint,
+    serviceQuery: 'Pet Insurance (Dog & Cat)'
+  },
+  {
+    name: 'Travel Insurance',
+    subtext: 'Overseas Medical & Trip Cancellation Shield',
+    icon: Plane,
+    serviceQuery: 'Travel Insurance'
+  }
+];
+
+export const Navbar: React.FC<NavbarProps> = ({ onSelectService }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isDesktopServicesOpen, setIsDesktopServicesOpen] = useState(false);
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   const [logoError, setLogoError] = useState(false);
+
+  const desktopDropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,11 +83,26 @@ export const Navbar: React.FC<NavbarProps> = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close desktop dropdown on click outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        desktopDropdownRef.current &&
+        !desktopDropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsDesktopServicesOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   // Lock background scroll when mobile drawer is open and support Escape key
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         setIsMobileMenuOpen(false);
+        setIsDesktopServicesOpen(false);
       }
     };
 
@@ -41,7 +120,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
 
   const navLinks = [
     { name: 'Home', href: '#home' },
-    { name: 'Services', href: '#services' },
+    { name: 'Services', href: '#services', isDropdown: true },
     { name: 'About', href: '#about' },
     { name: 'Why Choose Us', href: '#why-choose-us' },
     { name: 'Awards', href: '#awards' },
@@ -51,9 +130,23 @@ export const Navbar: React.FC<NavbarProps> = () => {
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     setIsMobileMenuOpen(false);
+    setIsDesktopServicesOpen(false);
     const target = document.querySelector(href);
     if (target) {
       target.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleServiceSelect = (serviceQuery: string) => {
+    setIsDesktopServicesOpen(false);
+    setIsMobileMenuOpen(false);
+    if (onSelectService) {
+      onSelectService(serviceQuery);
+    } else {
+      const target = document.querySelector('#inquiry-form');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
@@ -115,22 +208,120 @@ export const Navbar: React.FC<NavbarProps> = () => {
             </div>
           </a>
 
-          {/* Desktop Navigation Links - Fixed Single Line (whitespace-nowrap) */}
+          {/* Desktop Navigation Links */}
           <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={(e) => scrollToSection(e, link.href)}
-                className="relative px-2.5 xl:px-3 py-2 text-xs xl:text-sm font-bold text-brand-dark/80 hover:text-brand-forest whitespace-nowrap transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-forest group"
-              >
-                <span className="inline-block transition-transform duration-200 group-hover:-translate-y-0.5">
-                  {link.name}
-                </span>
-                {/* Animated underline that expands smoothly on hover */}
-                <span className="absolute bottom-0.5 left-2.5 right-2.5 h-0.5 bg-brand-forest rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              if (link.isDropdown) {
+                return (
+                  <div
+                    key={link.name}
+                    ref={desktopDropdownRef}
+                    className="relative"
+                    onMouseEnter={() => setIsDesktopServicesOpen(true)}
+                    onMouseLeave={() => setIsDesktopServicesOpen(false)}
+                  >
+                    <div className="flex items-center">
+                      {/* Services Text Link */}
+                      <a
+                        href={link.href}
+                        onClick={(e) => scrollToSection(e, link.href)}
+                        className="relative pl-2.5 xl:pl-3 pr-1 py-2 text-xs xl:text-sm font-bold text-brand-dark/80 hover:text-brand-forest whitespace-nowrap transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-forest group"
+                      >
+                        <span className="inline-block transition-transform duration-200 group-hover:-translate-y-0.5">
+                          {link.name}
+                        </span>
+                        <span className="absolute bottom-0.5 left-2.5 right-1 h-0.5 bg-brand-forest rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
+                      </a>
+
+                      {/* Small Right Arrow Trigger Button */}
+                      <button
+                        type="button"
+                        onClick={() => setIsDesktopServicesOpen(!isDesktopServicesOpen)}
+                        aria-expanded={isDesktopServicesOpen}
+                        aria-label="Toggle services menu"
+                        className="p-1 rounded-md text-brand-dark/70 hover:text-brand-forest hover:bg-brand-accentGreenLight transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-forest"
+                      >
+                        <ChevronDown
+                          className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                            isDesktopServicesOpen ? 'rotate-180 text-brand-forest' : ''
+                          }`}
+                        />
+                      </button>
+                    </div>
+
+                    {/* Desktop Floating Dropdown Menu (6 Services) */}
+                    {isDesktopServicesOpen && (
+                      <div className="absolute top-full left-0 mt-1 w-80 bg-white/98 backdrop-blur-md rounded-2xl shadow-soft-xl border border-brand-borderSubtle py-2.5 px-2 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
+                        {/* Header Badge */}
+                        <div className="px-3 py-1.5 mb-1.5 flex items-center justify-between border-b border-brand-borderSubtle/60">
+                          <span className="text-[10px] font-extrabold uppercase tracking-wider text-brand-forest flex items-center gap-1.5">
+                            <Sparkles className="w-3 h-3 text-emerald-600" />
+                            Popular Insurance Lines
+                          </span>
+                          <span className="text-[10px] font-semibold text-brand-muted">6 Core Lines</span>
+                        </div>
+
+                        {/* 6 Service Items */}
+                        <div className="space-y-1">
+                          {FEATURED_NAV_SERVICES.map((service) => {
+                            const IconComponent = service.icon;
+                            return (
+                              <button
+                                key={service.name}
+                                type="button"
+                                onClick={() => handleServiceSelect(service.serviceQuery)}
+                                className="w-full text-left px-3 py-2 rounded-xl hover:bg-brand-accentGreenLight group/item transition-colors flex items-center justify-between"
+                              >
+                                <div className="flex items-center gap-2.5 min-w-0">
+                                  <div className="w-8 h-8 rounded-lg bg-brand-accentGreen text-brand-forest flex items-center justify-center flex-shrink-0 group-hover/item:bg-brand-forest group-hover/item:text-brand-accentYellow transition-colors">
+                                    <IconComponent className="w-4 h-4" />
+                                  </div>
+                                  <div className="min-w-0">
+                                    <div className="text-xs font-bold text-brand-dark group-hover/item:text-brand-forest transition-colors truncate">
+                                      {service.name}
+                                    </div>
+                                    <div className="text-[10px] text-brand-muted truncate">
+                                      {service.subtext}
+                                    </div>
+                                  </div>
+                                </div>
+                                <ArrowRight className="w-3.5 h-3.5 text-brand-forest opacity-0 group-hover/item:opacity-100 group-hover/item:translate-x-0.5 transition-all flex-shrink-0 ml-2" />
+                              </button>
+                            );
+                          })}
+                        </div>
+
+                        {/* Dropdown Footer Link */}
+                        <div className="mt-2 pt-2 border-t border-brand-borderSubtle/60 px-3">
+                          <a
+                            href="#services"
+                            onClick={(e) => scrollToSection(e, '#services')}
+                            className="text-[11px] font-extrabold text-brand-forest hover:text-brand-forestHover flex items-center justify-between group/link"
+                          >
+                            <span>Explore all 38+ specialized lines</span>
+                            <ArrowRight className="w-3 h-3 text-brand-forest group-hover/link:translate-x-1 transition-transform" />
+                          </a>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                );
+              }
+
+              return (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={(e) => scrollToSection(e, link.href)}
+                  className="relative px-2.5 xl:px-3 py-2 text-xs xl:text-sm font-bold text-brand-dark/80 hover:text-brand-forest whitespace-nowrap transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-forest group"
+                >
+                  <span className="inline-block transition-transform duration-200 group-hover:-translate-y-0.5">
+                    {link.name}
+                  </span>
+                  <span className="absolute bottom-0.5 left-2.5 right-2.5 h-0.5 bg-brand-forest rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
+                </a>
+              );
+            })}
           </nav>
 
           {/* Desktop Right Action Buttons (Shown on lg: 1024px+) */}
@@ -223,17 +414,81 @@ export const Navbar: React.FC<NavbarProps> = () => {
             </div>
 
             <div className="flex flex-col space-y-1 mb-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={(e) => scrollToSection(e, link.href)}
-                  className="px-3.5 py-3 rounded-xl text-sm font-bold text-brand-dark hover:bg-brand-accentGreenLight hover:text-brand-forest active:bg-brand-accentGreen transition-colors flex items-center justify-between"
-                >
-                  <span>{link.name}</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-brand-muted opacity-50" />
-                </a>
-              ))}
+              {navLinks.map((link) => {
+                if (link.isDropdown) {
+                  return (
+                    <div key={link.name} className="flex flex-col">
+                      {/* Services Row with Right Arrow Button */}
+                      <div className="flex items-center justify-between rounded-xl hover:bg-brand-accentGreenLight">
+                        <a
+                          href={link.href}
+                          onClick={(e) => scrollToSection(e, link.href)}
+                          className="flex-grow px-3.5 py-3 text-sm font-bold text-brand-dark hover:text-brand-forest transition-colors"
+                        >
+                          {link.name}
+                        </a>
+                        <button
+                          type="button"
+                          onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
+                          aria-label="Toggle mobile services"
+                          className="p-3 text-brand-dark hover:text-brand-forest"
+                        >
+                          <ChevronDown
+                            className={`w-4 h-4 transition-transform duration-200 ${
+                              isMobileServicesOpen ? 'rotate-180 text-brand-forest' : 'text-brand-muted'
+                            }`}
+                          />
+                        </button>
+                      </div>
+
+                      {/* Expandable 6 Services Submenu on Mobile */}
+                      {isMobileServicesOpen && (
+                        <div className="pl-4 pr-1 py-1.5 space-y-1 bg-brand-accentGreenLight/40 rounded-xl my-1 border border-brand-accentGreenBorder/50">
+                          {FEATURED_NAV_SERVICES.map((s) => {
+                            const IconComponent = s.icon;
+                            return (
+                              <button
+                                key={s.name}
+                                type="button"
+                                onClick={() => handleServiceSelect(s.serviceQuery)}
+                                className="w-full text-left px-3 py-2 rounded-lg hover:bg-white text-xs font-semibold text-brand-dark hover:text-brand-forest flex items-center justify-between transition-colors"
+                              >
+                                <div className="flex items-center gap-2">
+                                  <IconComponent className="w-3.5 h-3.5 text-brand-forest flex-shrink-0" />
+                                  <span>{s.name}</span>
+                                </div>
+                                <ArrowRight className="w-3 h-3 text-brand-muted" />
+                              </button>
+                            );
+                          })}
+                          <div className="pt-1.5 px-3 border-t border-brand-borderSubtle/60">
+                            <a
+                              href="#services"
+                              onClick={(e) => scrollToSection(e, '#services')}
+                              className="text-[11px] font-bold text-brand-forest flex items-center justify-between py-1"
+                            >
+                              <span>View All 38+ Services</span>
+                              <ArrowRight className="w-3 h-3" />
+                            </a>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  );
+                }
+
+                return (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    onClick={(e) => scrollToSection(e, link.href)}
+                    className="px-3.5 py-3 rounded-xl text-sm font-bold text-brand-dark hover:bg-brand-accentGreenLight hover:text-brand-forest active:bg-brand-accentGreen transition-colors flex items-center justify-between"
+                  >
+                    <span>{link.name}</span>
+                    <ArrowRight className="w-3.5 h-3.5 text-brand-muted opacity-50" />
+                  </a>
+                );
+              })}
             </div>
 
             {/* Direct phone contacts in mobile drawer */}
