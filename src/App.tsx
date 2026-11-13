@@ -3,7 +3,6 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Services } from './components/Services';
 import { About } from './components/About';
-import { TrustStats } from './components/TrustStats';
 import { Process } from './components/Process';
 import { WhyChooseUs } from './components/WhyChooseUs';
 import { PolicyReview } from './components/PolicyReview';
@@ -119,13 +118,10 @@ export const App: React.FC = () => {
           onExploreAll={openAllServicesPage}
         />
 
-        {/* Section 3: About Secure With Mehta & Kashyap Mehta */}
+        {/* Section 3: About Secure With Mehta, Editorial Quote & Trust Statistics (Merged Single Section) */}
         <About />
 
-        {/* Section 4: Experience & Trust Stats (39 Years Heritage, Mumbai Base) */}
-        <TrustStats />
-
-        {/* Section 5: How It Works (4-Step Timeline) */}
+        {/* Section 4: How It Works (4-Step Timeline) */}
         <Process />
 
         {/* Section 6: Why Choose Us (Consultative Approach) */}
