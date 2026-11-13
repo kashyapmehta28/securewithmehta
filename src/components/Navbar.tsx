@@ -154,8 +154,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectService }) => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-soft border-b border-brand-borderSubtle py-1.5 sm:py-2'
-          : 'bg-white/95 backdrop-blur-sm border-b border-brand-borderSubtle/60 py-3 sm:py-4 md:py-4.5'
+          ? 'bg-white shadow-soft border-b border-brand-borderSubtle py-1.5 sm:py-2'
+          : 'bg-white border-b border-brand-borderSubtle/60 py-3 sm:py-4 md:py-4.5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -249,16 +249,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectService }) => {
                       </button>
                     </div>
 
-                    {/* Desktop Floating Dropdown Menu (6 Services) */}
+                    {/* Desktop Floating Dropdown Menu (6 Services) - Solid 100% Opaque Background */}
                     {isDesktopServicesOpen && (
-                      <div className="absolute top-full left-0 mt-1 w-80 bg-white/98 backdrop-blur-md rounded-2xl shadow-soft-xl border border-brand-borderSubtle py-2.5 px-2 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
+                      <div className="absolute top-full left-0 mt-2 w-84 bg-white rounded-2xl shadow-[0_20px_60px_-15px_rgba(17,53,37,0.22)] border-2 border-brand-accentGreenBorder py-3 px-2.5 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
                         {/* Header Badge */}
-                        <div className="px-3 py-1.5 mb-1.5 flex items-center justify-between border-b border-brand-borderSubtle/60">
-                          <span className="text-[10px] font-extrabold uppercase tracking-wider text-brand-forest flex items-center gap-1.5">
-                            <Sparkles className="w-3 h-3 text-emerald-600" />
+                        <div className="px-3.5 py-2 mb-2 flex items-center justify-between bg-brand-accentGreen rounded-xl border border-brand-accentGreenBorder">
+                          <span className="text-[11px] font-extrabold uppercase tracking-wider text-brand-forest flex items-center gap-1.5">
+                            <Sparkles className="w-3.5 h-3.5 text-emerald-700" />
                             Popular Insurance Lines
                           </span>
-                          <span className="text-[10px] font-semibold text-brand-muted">6 Core Lines</span>
+                          <span className="text-[10px] font-bold text-brand-forest bg-white px-2 py-0.5 rounded-full border border-brand-accentGreenBorder shadow-2xs">
+                            6 Core Lines
+                          </span>
                         </div>
 
                         {/* 6 Service Items */}
@@ -270,10 +272,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectService }) => {
                                 key={service.name}
                                 type="button"
                                 onClick={() => handleServiceSelect(service.serviceQuery)}
-                                className="w-full text-left px-3 py-2 rounded-xl hover:bg-brand-accentGreenLight group/item transition-colors flex items-center justify-between"
+                                className="w-full text-left px-3 py-2 rounded-xl bg-white hover:bg-brand-accentGreenLight group/item transition-all duration-150 flex items-center justify-between border border-transparent hover:border-brand-accentGreenBorder"
                               >
                                 <div className="flex items-center gap-2.5 min-w-0">
-                                  <div className="w-8 h-8 rounded-lg bg-brand-accentGreen text-brand-forest flex items-center justify-center flex-shrink-0 group-hover/item:bg-brand-forest group-hover/item:text-brand-accentYellow transition-colors">
+                                  <div className="w-8 h-8 rounded-lg bg-brand-accentGreen text-brand-forest flex items-center justify-center flex-shrink-0 group-hover/item:bg-brand-forest group-hover/item:text-brand-accentYellow transition-colors shadow-2xs">
                                     <IconComponent className="w-4 h-4" />
                                   </div>
                                   <div className="min-w-0">
@@ -292,11 +294,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectService }) => {
                         </div>
 
                         {/* Dropdown Footer Link */}
-                        <div className="mt-2 pt-2 border-t border-brand-borderSubtle/60 px-3">
+                        <div className="mt-2.5 pt-2 border-t border-brand-borderSubtle px-3 pb-0.5">
                           <a
                             href="#services"
                             onClick={(e) => scrollToSection(e, '#services')}
-                            className="text-[11px] font-extrabold text-brand-forest hover:text-brand-forestHover flex items-center justify-between group/link"
+                            className="text-[11px] font-extrabold text-brand-forest hover:text-brand-forestHover flex items-center justify-between group/link py-1"
                           >
                             <span>Explore all 38+ specialized lines</span>
                             <ArrowRight className="w-3 h-3 text-brand-forest group-hover/link:translate-x-1 transition-transform" />
@@ -441,9 +443,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectService }) => {
                         </button>
                       </div>
 
-                      {/* Expandable 6 Services Submenu on Mobile */}
+                      {/* Expandable 6 Services Submenu on Mobile - Solid 100% Opaque */}
                       {isMobileServicesOpen && (
-                        <div className="pl-4 pr-1 py-1.5 space-y-1 bg-brand-accentGreenLight/40 rounded-xl my-1 border border-brand-accentGreenBorder/50">
+                        <div className="p-2 space-y-1.5 bg-[#F3F9F5] rounded-xl my-1.5 border-2 border-brand-accentGreenBorder shadow-soft-sm">
+                          <div className="px-2 py-1 text-[11px] font-extrabold text-brand-forest uppercase tracking-wider flex items-center justify-between">
+                            <span>6 Core Services</span>
+                            <span className="text-[10px] text-brand-muted font-normal">Tap to consult</span>
+                          </div>
                           {FEATURED_NAV_SERVICES.map((s) => {
                             const IconComponent = s.icon;
                             return (
@@ -451,21 +457,23 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectService }) => {
                                 key={s.name}
                                 type="button"
                                 onClick={() => handleServiceSelect(s.serviceQuery)}
-                                className="w-full text-left px-3 py-2 rounded-lg hover:bg-white text-xs font-semibold text-brand-dark hover:text-brand-forest flex items-center justify-between transition-colors"
+                                className="w-full text-left px-3 py-2.5 rounded-lg bg-white hover:bg-brand-accentGreen text-xs font-bold text-brand-dark hover:text-brand-forest flex items-center justify-between transition-all border border-brand-borderSubtle hover:border-brand-accentGreenBorder shadow-2xs"
                               >
-                                <div className="flex items-center gap-2">
-                                  <IconComponent className="w-3.5 h-3.5 text-brand-forest flex-shrink-0" />
-                                  <span>{s.name}</span>
+                                <div className="flex items-center gap-2.5">
+                                  <div className="w-7 h-7 rounded-lg bg-brand-accentGreen text-brand-forest flex items-center justify-center flex-shrink-0">
+                                    <IconComponent className="w-4 h-4" />
+                                  </div>
+                                  <span className="text-xs font-bold">{s.name}</span>
                                 </div>
-                                <ArrowRight className="w-3 h-3 text-brand-muted" />
+                                <ArrowRight className="w-3.5 h-3.5 text-brand-muted" />
                               </button>
                             );
                           })}
-                          <div className="pt-1.5 px-3 border-t border-brand-borderSubtle/60">
+                          <div className="pt-2 px-2 border-t border-brand-accentGreenBorder">
                             <a
                               href="#services"
                               onClick={(e) => scrollToSection(e, '#services')}
-                              className="text-[11px] font-bold text-brand-forest flex items-center justify-between py-1"
+                              className="text-[11px] font-extrabold text-brand-forest flex items-center justify-between py-1"
                             >
                               <span>View All 38+ Services</span>
                               <ArrowRight className="w-3 h-3" />
