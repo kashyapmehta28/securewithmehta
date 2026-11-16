@@ -10,15 +10,15 @@ interface ServicesProps {
 }
 
 export const Services: React.FC<ServicesProps> = ({ onSelectService, onExploreAll }) => {
-  // 8 Representative policy lines shown on the home page (Heading + Icon only)
+  // 8 Representative policy lines shown on the home page with SEO H3 headings
   const top8Services = useMemo(() => {
     const top8Ids = [
-      'health-insurance',
-      'life-insurance',
+      'motor-insurance',
       'car-insurance',
-      'commercial-vehicle-insurance',
-      'marine-transit-insurance',
+      'bike-scooter-insurance',
+      'commercial-insurance',
       'fire-policy',
+      'marine-transit-insurance',
       'workmen-policy',
       'cyber-crime-insurance'
     ];
@@ -32,23 +32,23 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService, onExploreAl
     <section id="services" className="py-20 md:py-28 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
+        {/* Section Header: Comprehensive General Insurance Services (H2) */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-accentGreen text-brand-forest border border-brand-accentGreenBorder mb-4 text-xs font-semibold uppercase tracking-wider">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>38+ Specialized Insurance Lines</span>
+            <span>General Insurance Services in Mumbai</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-dark tracking-tight mb-4">
-            Specialized Insurance Solutions
+            Comprehensive General Insurance Services
           </h2>
           
           <p className="text-base sm:text-lg text-brand-muted leading-relaxed font-normal">
-            Independent advisory across life, commercial, and general insurance lines. Browse our primary policies below or click explore to view our complete portfolio.
+            Independent guidance from Mehta Associates on motor insurance, commercial insurance, fire insurance, and business protection. Evaluated across all leading insurers in Mumbai and India.
           </p>
         </div>
 
-        {/* 8 Clean Heading-Only Policy Cards (2 cols on mobile, 4 on tablet & desktop) */}
+        {/* 8 Clean Heading-Only Policy Cards with H3 headings (2 cols on mobile, 4 on tablet & desktop) */}
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-5 mb-10 sm:mb-12">
           {top8Services.map((service, index) => (
             <motion.div
@@ -66,7 +66,7 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService, onExploreAl
                   <DynamicIcon name={service.icon} className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
 
-                {/* Title Only - Clean & Bold */}
+                {/* H3 Heading for SEO */}
                 <h3 className="text-xs sm:text-base font-bold text-brand-dark group-hover:text-brand-forest transition-colors leading-snug line-clamp-2">
                   {service.title}
                 </h3>
@@ -81,6 +81,49 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService, onExploreAl
               </div>
             </motion.div>
           ))}
+        </div>
+
+        {/* Featured Visual Spotlights for Motor Insurance & Business Insurance with ALT text */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto mb-10">
+          <div
+            onClick={() => onSelectService('Motor Insurance Solutions in Mumbai')}
+            className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-brand-accentGreenLight/60 to-white border border-brand-accentGreenBorder hover:border-brand-forest/50 transition-all cursor-pointer shadow-soft-sm group"
+          >
+            <div className="w-16 h-16 rounded-xl bg-brand-forest text-brand-accentYellow flex items-center justify-center flex-shrink-0 shadow-soft overflow-hidden p-1">
+              <DynamicIcon name="Car" className="w-8 h-8 group-hover:scale-110 transition-transform" />
+            </div>
+            <div className="text-left">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-brand-forest bg-brand-accentGreen px-2 py-0.5 rounded-full">
+                Motor Insurance Solutions in Mumbai
+              </span>
+              <h4 className="text-sm sm:text-base font-bold text-brand-dark mt-1">
+                Motor Insurance & Car Coverage
+              </h4>
+              <p className="text-xs text-brand-muted mt-0.5">
+                Bumper-to-bumper zero-depreciation, 24/7 RSA & cashless claims in Mumbai.
+              </p>
+            </div>
+          </div>
+
+          <div
+            onClick={() => onSelectService('Commercial Insurance for Businesses')}
+            className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-brand-accentYellow/20 to-white border border-amber-200 hover:border-brand-forest/50 transition-all cursor-pointer shadow-soft-sm group"
+          >
+            <div className="w-16 h-16 rounded-xl bg-brand-forest text-brand-accentYellow flex items-center justify-center flex-shrink-0 shadow-soft overflow-hidden p-1">
+              <DynamicIcon name="Building2" className="w-8 h-8 group-hover:scale-110 transition-transform" />
+            </div>
+            <div className="text-left">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-800 bg-brand-accentGreen px-2 py-0.5 rounded-full">
+                Commercial General Insurance Solutions
+              </span>
+              <h4 className="text-sm sm:text-base font-bold text-brand-dark mt-1">
+                Commercial & Business Insurance
+              </h4>
+              <p className="text-xs text-brand-muted mt-0.5">
+                Industrial all-risk, fire perils, godowns & corporate liabilities protection.
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Explore All Services Button (Navigates to dedicated page) */}

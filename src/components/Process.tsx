@@ -82,7 +82,7 @@ export const Process: React.FC = () => {
             className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-accentGreen text-brand-forest border border-brand-accentGreenBorder mb-3 text-xs font-semibold uppercase tracking-wider shadow-soft-sm"
           >
             <Compass className="w-3.5 h-3.5 text-brand-forest animate-spin-slow" />
-            <span>How It Works</span>
+            <span>Insurance Guidance Process</span>
           </motion.div>
 
           <motion.h2
@@ -92,7 +92,7 @@ export const Process: React.FC = () => {
             transition={{ duration: 0.5 }}
             className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-brand-dark tracking-tight mb-3"
           >
-            A Transparent, Step-by-Step Advisory Journey
+            Simple and Reliable Insurance Guidance
           </motion.h2>
           
           <motion.p

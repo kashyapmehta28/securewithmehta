@@ -80,7 +80,7 @@ export const AllServicesPage: React.FC<AllServicesPageProps> = ({ onBack, onSele
               <div className="flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-white p-1 shadow-soft group-hover:scale-105 transition-all overflow-hidden border border-brand-borderSubtle">
                 <img
                   src="/images/logo.png"
-                  alt={`${SITE_CONFIG.brand.fullName} Logo`}
+                  alt="Mehta Associates General Insurance Consultancy"
                   className="w-full h-full object-contain"
                 />
               </div>
@@ -89,7 +89,7 @@ export const AllServicesPage: React.FC<AllServicesPageProps> = ({ onBack, onSele
                   {SITE_CONFIG.brand.fullName}
                 </div>
                 <div className="text-[10px] text-brand-muted font-medium mt-0.5">
-                  Complete Policy Catalog
+                  General Insurance Directory
                 </div>
               </div>
             </button>
@@ -105,7 +105,7 @@ export const AllServicesPage: React.FC<AllServicesPageProps> = ({ onBack, onSele
               </a>
 
               <a
-                href={`https://wa.me/${SITE_CONFIG.contacts.defaultWhatsAppNumber}?text=${encodeURIComponent('Hello Kashyap ji, I am exploring your insurance services on your website and would like consultation.')}`}
+                href={`https://wa.me/${SITE_CONFIG.contacts.defaultWhatsAppNumber}?text=${encodeURIComponent('Hello Kashyap ji, I am exploring your general insurance services in Mumbai and would like consultation.')}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs transition-colors shadow-soft-sm"
@@ -131,23 +131,22 @@ export const AllServicesPage: React.FC<AllServicesPageProps> = ({ onBack, onSele
             Home
           </button>
           <span>/</span>
-          <span className="text-brand-dark font-semibold">All 38+ Insurance Services</span>
+          <span className="text-brand-dark font-semibold">General Insurance Services in Mumbai</span>
         </div>
 
         {/* Page Hero Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-accentGreen text-brand-forest border border-brand-accentGreenBorder mb-4 text-xs font-semibold uppercase tracking-wider">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Complete Insurance Directory • {SERVICES_DATA.length} Available Lines</span>
+            <span>General Insurance Directory • {SERVICES_DATA.length} Available Lines</span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-dark tracking-tight mb-4">
-            All Insurance Solutions & Specialized Coverage
+            General Insurance Services in Mumbai &amp; Specialized Solutions
           </h1>
 
           <p className="text-base sm:text-lg text-brand-muted leading-relaxed font-normal">
-            Independent advisory across Life, Commercial, Engineering, Transit, Marine, and Liability insurance. 
-            Evaluated objectively across 28+ leading insurers in India to ensure comprehensive protection.
+            Independent guidance from Mehta Associates across Motor, Commercial, Fire, Engineering, Marine Cargo, and Corporate Liabilities. Evaluated objectively to protect your assets across Mumbai and India.
           </p>
         </div>
 

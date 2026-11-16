@@ -61,17 +61,17 @@ export const About: React.FC = () => {
           {/* Left Column: Owner Portrait (Exact Height Match with Narrative) */}
           <div className="md:col-span-5 flex flex-col">
             <div className="relative h-full min-h-[300px] xs:min-h-[340px] sm:min-h-[440px] rounded-2xl overflow-hidden shadow-soft-lg border border-brand-borderSubtle group bg-brand-accentGreenLight flex flex-col justify-end">
-              {/* Photo filling 100% of column */}
+              {/* Photo filling 100% of column with SEO ALT */}
               <img
                 src="/images/kashyap-mehta-blazer.jpg"
-                alt="Kashyap Mehta - Insurance Advisor"
+                alt="Mehta Associates – 38 Years of Insurance Experience"
                 className="absolute inset-0 w-full h-full object-cover object-[50%_12%] transition-transform duration-500 group-hover:scale-[1.02]"
               />
               
               {/* Top-Right Established Badge */}
               <div className="absolute top-3.5 right-3.5 z-10 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-brand-forest text-xs font-bold shadow-soft border border-white/80">
                 <Award className="w-3.5 h-3.5 text-emerald-700" />
-                <span>Established Presence</span>
+                <span>38+ Years Expertise</span>
               </div>
 
               {/* Gradient overlay for text contrast */}
@@ -84,7 +84,7 @@ export const About: React.FC = () => {
                     Kashyap Mehta
                   </h3>
                   <p className="text-xs text-white/90 font-medium mt-0.5">
-                    Secure With Mehta
+                    Mehta Associates
                   </p>
                 </div>
                 <div className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-black/40 backdrop-blur-md text-white/90 text-[11px] font-semibold border border-white/20 flex-shrink-0">
@@ -101,17 +101,17 @@ export const About: React.FC = () => {
               {/* Top Tag */}
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-accentGreen text-brand-forest border border-brand-accentGreenBorder mb-3 text-xs font-semibold uppercase tracking-wider shadow-soft-sm">
                 <Sparkles className="w-3.5 h-3.5 text-brand-forest" />
-                <span>About Kashyap Mehta</span>
+                <span>About Mehta Associates</span>
               </div>
 
-              {/* Main Headline */}
+              {/* Main H2 Headline (SEO Recommended Heading) */}
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-brand-dark tracking-tight mb-4 leading-tight">
-                Personalized Guidance Grounded in Four Decades of Trust
+                About Mehta Associates – Your General Insurance Partner
               </h2>
 
-              {/* Short & Impactful Narrative */}
+              {/* SEO-Friendly Exact Paragraph */}
               <p className="text-sm sm:text-base text-brand-muted leading-relaxed font-normal">
-                Backed by four decades of business heritage in Mumbai, <strong className="text-brand-dark font-bold">Kashyap Mehta</strong> and <strong className="text-brand-dark font-bold">Secure With Mehta</strong> <span className="text-brand-dark/70 font-medium">(formerly Mehta Associates)</span> provide independent, human-centered guidance across Life and General Insurance portfolios—decoding fine print to safeguard your family and business.
+                Mehta Associates, led by Kashyap Mehta, is an experienced general insurance consultancy with over 38 years of industry experience. Based in Mumbai, we provide guidance on general insurance solutions for individuals and businesses, including motor insurance, commercial insurance and other insurance requirements. Our focus is on understanding customer needs and helping them make informed insurance decisions through personalised guidance and professional support.
               </p>
 
               {/* Creative One-Line Quote Card */}
@@ -151,10 +151,19 @@ export const About: React.FC = () => {
         </div>
 
         {/* ========================================================
-            MERGED SECTION: 4 Trust Statistics Grid
+            EXPERIENCE SECTION (H2) & 4 Trust Statistics Grid
             (2000+ Happy Clients, 99% Claim Settled, 38+ Lines, 100% Policy Review)
             ======================================================== */}
         <div className="pt-8 sm:pt-10 border-t border-brand-borderSubtle">
+          <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-8">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-accentGreen text-brand-forest border border-brand-accentGreenBorder mb-2 text-xs font-bold uppercase tracking-wider">
+              <Award className="w-3.5 h-3.5 text-emerald-700" />
+              <span>38+ Years of Insurance Experience</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-dark tracking-tight">
+              38+ Years of Experience in General Insurance
+            </h2>
+          </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
             {SITE_CONFIG.stats.map((stat, index) => (
               <motion.div

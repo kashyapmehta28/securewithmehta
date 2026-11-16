@@ -7,12 +7,12 @@ import {
   Shield,
   ChevronDown,
   HeartPulse,
-  ShieldCheck,
   Car,
   AlertCircle,
-  PawPrint,
   Plane,
-  Sparkles
+  Sparkles,
+  Building2,
+  Flame
 } from 'lucide-react';
 import { SITE_CONFIG } from '../data/siteConfig';
 
@@ -29,22 +29,28 @@ interface NavServiceItem {
 
 const FEATURED_NAV_SERVICES: NavServiceItem[] = [
   {
+    name: 'Motor (Car) Insurance',
+    subtext: 'Zero-dep, Engine Protect & Commercial Fleet',
+    icon: Car,
+    serviceQuery: 'Car Insurance Guidance and Coverage'
+  },
+  {
+    name: 'Commercial Insurance',
+    subtext: 'Factory, Office, Godown & Business Assets',
+    icon: Building2,
+    serviceQuery: 'Commercial Insurance for Businesses'
+  },
+  {
+    name: 'Fire Insurance Solutions',
+    subtext: 'Standard Fire & Special Perils Protection',
+    icon: Flame,
+    serviceQuery: 'Fire Insurance Solutions for Business Protection'
+  },
+  {
     name: 'Health Insurance',
     subtext: 'Family Floater, Critical Illness & Senior Care',
     icon: HeartPulse,
     serviceQuery: 'Health Insurance'
-  },
-  {
-    name: 'Life Insurance',
-    subtext: 'Pure Term Protection & Guaranteed Legacy',
-    icon: ShieldCheck,
-    serviceQuery: 'Life Insurance'
-  },
-  {
-    name: 'Motor (Car) Insurance',
-    subtext: 'Zero-dep, Engine Protect & Commercial Fleet',
-    icon: Car,
-    serviceQuery: 'Car & Two-Wheeler Insurance'
   },
   {
     name: 'Personal Accident Insurance',
@@ -53,14 +59,8 @@ const FEATURED_NAV_SERVICES: NavServiceItem[] = [
     serviceQuery: 'Personal Accident Cover'
   },
   {
-    name: 'Pet Insurance',
-    subtext: 'Veterinary Hospitalization & Surgery Cover',
-    icon: PawPrint,
-    serviceQuery: 'Pet Insurance (Dog & Cat)'
-  },
-  {
-    name: 'Travel Insurance',
-    subtext: 'Overseas Medical & Trip Cancellation Shield',
+    name: 'Travel & Marine Transit',
+    subtext: 'Overseas Medical & Cargo Freight Shield',
     icon: Plane,
     serviceQuery: 'Travel Insurance'
   }
@@ -178,7 +178,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectService }) => {
               {!logoError ? (
                 <img
                   src="/images/logo.png"
-                  alt={`${SITE_CONFIG.brand.fullName} Logo`}
+                  alt="Mehta Associates General Insurance Consultancy"
                   className="w-full h-full object-contain transition-transform duration-300"
                   onError={() => setLogoError(true)}
                 />
@@ -202,7 +202,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectService }) => {
               </span>
               {!isScrolled && (
                 <span className="hidden sm:block text-[11px] md:text-xs text-brand-muted font-medium transition-all duration-300 mt-0.5">
-                  Life & General Insurance Consultancy
+                  General Insurance Consultancy
                 </span>
               )}
             </div>

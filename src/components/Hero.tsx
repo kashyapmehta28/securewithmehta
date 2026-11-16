@@ -21,7 +21,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onAssistanceClick })
           {/* Photo Image */}
           <img
             src="/images/kashyap-mehta.jpg"
-            alt="Kashyap Mehta - Secure With Mehta Insurance Advisor"
+            alt="Kashyap Mehta – General Insurance Consultant in Mumbai"
             className="w-full h-full object-cover object-[50%_4%] transition-transform duration-500 group-hover:scale-[1.02]"
           />
 
@@ -42,14 +42,14 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onAssistanceClick })
               <div className="w-9 h-9 rounded-lg bg-white p-0.5 border border-brand-borderSubtle flex-shrink-0 shadow-soft-sm">
                 <img
                   src="/images/logo.png"
-                  alt="Secure With Mehta"
+                  alt="Mehta Associates General Insurance Consultancy"
                   className="w-full h-full object-contain"
                 />
               </div>
               <div>
                 <h3 className="text-base font-bold text-brand-dark leading-tight">Kashyap Mehta</h3>
                 <p className="text-xs text-brand-muted">
-                  Secure With Mehta <span className="text-[10px] text-brand-forest font-semibold">(Formerly Mehta Associates)</span>
+                  Mehta Associates <span className="text-[10px] text-brand-forest font-semibold">(General Insurance Consultant)</span>
                 </p>
               </div>
             </div>
@@ -90,26 +90,33 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onAssistanceClick })
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            {/* 1. Former Name Transition Pill (First on phone and desktop) */}
+            {/* 1. Established Presence Pill */}
             <div className="inline-flex flex-wrap items-center gap-1.5 xs:gap-2 px-3 py-1.5 rounded-full bg-brand-accentGreen text-brand-forest border border-brand-accentGreenBorder mb-4 sm:mb-6 shadow-soft-sm max-w-full">
               <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse flex-shrink-0" />
               <span className="text-[10px] xs:text-[11px] sm:text-xs font-semibold tracking-wide">
-                Formerly <span className="font-bold underline decoration-brand-forest/40 underline-offset-2">Mehta Associates</span> • Now <span className="font-bold">Secure With Mehta</span>
+                <span className="font-bold">Mehta Associates</span> • 38+ Years of General Insurance Advisory in Mumbai
               </span>
             </div>
 
-            {/* 2. On Mobile & Tablets (< lg): Image shown directly below 'Formerly Mehta Associates' line */}
+            {/* 2. On Mobile & Tablets (< lg): Image shown directly below badge line */}
             <div className="block lg:hidden mb-6 sm:mb-8">
               {renderConsultantCard()}
             </div>
 
-            {/* 3. Hero Page Content: Headline in Casual Handwritten Font with Animation (Applied across Mobile, Tablet & Laptop) */}
+            {/* 3. Hero Section H1 (Target Primary Keyword) */}
             <motion.h1
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              className="text-3xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl font-extrabold text-brand-dark tracking-tight leading-[1.2] sm:leading-[1.16] mb-3 sm:mb-4"
+            >
+              Trusted General Insurance Consultant in Mumbai
+            </motion.h1>
+
+            {/* 4. Casual Handwritten Quote with Animation (Applied across Mobile, Tablet & Laptop) */}
+            <div
               style={{ fontFamily: "'Caveat', 'Kalam', cursive, sans-serif" }}
-              className="font-casual text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-7xl font-bold text-brand-dark tracking-normal leading-[1.25] sm:leading-[1.18] lg:leading-[1.15] mb-4 sm:mb-6 select-none"
+              className="font-casual text-2xl xs:text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold text-brand-dark tracking-normal leading-[1.25] mb-4 sm:mb-5 select-none"
             >
               <motion.span
                 initial={{ opacity: 0, y: 14 }}
@@ -136,12 +143,12 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onAssistanceClick })
                   className="absolute left-0 bottom-1 sm:bottom-2 w-full h-3 sm:h-4 bg-brand-accentYellow/80 -z-10 rounded-sm origin-left"
                 />
               </motion.span>
-            </motion.h1>
+            </div>
 
-            {/* Sub-headline */}
-
-
-
+            {/* 5. SEO Description Paragraph with Primary & Supporting Keywords */}
+            <p className="text-sm sm:text-base md:text-lg text-brand-muted leading-relaxed font-normal mb-6 sm:mb-8 max-w-2xl">
+              Providing independent <strong className="text-brand-dark font-semibold">General Insurance Services in Mumbai</strong>. Led by <strong className="text-brand-dark font-semibold">Kashyap Mehta</strong> with over 38 years of experience, Mehta Associates delivers unbiased insurance guidance and solutions for individuals and businesses—including motor, commercial, fire, and business insurance solutions.
+            </p>
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mb-8 sm:mb-10">
@@ -150,7 +157,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onAssistanceClick })
                 onClick={onAssistanceClick}
                 className="w-full sm:w-auto min-h-[48px] inline-flex items-center justify-center gap-2.5 px-6 py-3.5 sm:px-7 sm:py-4 rounded-xl bg-brand-forest hover:bg-brand-forestHover active:bg-brand-forestHover active:scale-[0.98] text-white font-semibold text-sm sm:text-base shadow-soft hover:shadow-soft-lg transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-forest group"
               >
-                <span>Get Insurance Assistance</span>
+                <span>Connect with Mehta Associates</span>
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-brand-accentYellow group-hover:translate-x-1 transition-transform" />
               </button>
 
@@ -160,7 +167,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onAssistanceClick })
                 className="w-full sm:w-auto min-h-[48px] inline-flex items-center justify-center gap-2 px-5 py-3.5 sm:px-6 sm:py-4 rounded-xl bg-white hover:bg-brand-accentGreenLight active:bg-brand-accentGreen active:scale-[0.98] text-brand-dark font-semibold text-sm sm:text-base border border-brand-borderSubtle hover:border-brand-accentGreenBorder transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-forest"
               >
                 <FileText className="w-4 h-4 sm:w-5 sm:h-5 text-brand-forest" />
-                <span>Explore Services</span>
+                <span>General Insurance Solutions</span>
               </button>
             </div>
 

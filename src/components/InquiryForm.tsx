@@ -97,7 +97,7 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
 
     // Build neatly formatted WhatsApp message
     const formattedMessage = [
-      `*NEW INSURANCE INQUIRY — SECURE WITH MEHTA*`,
+      `*NEW GENERAL INSURANCE INQUIRY — MEHTA ASSOCIATES*`,
       `--------------------------------------`,
       `👤 *Name:* ${formData.fullName.trim()}`,
       `📱 *Mobile:* ${formData.mobile.trim()}`,
@@ -106,7 +106,7 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
       `📍 *City / Location:* ${formData.city.trim()}`,
       `📝 *Specific Requirement:* ${formData.requirement.trim()}`,
       `--------------------------------------`,
-      `_Sent via Secure With Mehta Insurance Inquiry Portal_`,
+      `_Sent via Mehta Associates General Insurance Portal_`,
     ].join('\n');
 
     const whatsappUrl = `https://wa.me/${SITE_CONFIG.contacts.defaultWhatsAppNumber}?text=${encodeURIComponent(
@@ -141,15 +141,15 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
       <div className="mb-8 text-left">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-accentGreen text-brand-forest text-xs font-bold uppercase tracking-wider mb-2">
           <MessageSquare className="w-3.5 h-3.5" />
-          <span>Direct WhatsApp Inquiry</span>
+          <span>General Insurance Advisory</span>
         </div>
         
         <h3 className="text-2xl sm:text-3xl font-extrabold text-brand-dark tracking-tight">
-          Request Insurance Consultation
+          Let's Find the Right Insurance Solution for You
         </h3>
         
         <p className="text-xs sm:text-sm text-brand-muted mt-1 leading-relaxed">
-          Fill in your details below. Clicking 'Send via WhatsApp' will launch WhatsApp with your pre-filled inquiry. You can review and edit before sending.
+          Fill in your details below for personalized general insurance guidance from Mehta Associates in Mumbai. Review and edit before sending.
         </p>
 
         {/* Selected Service Badge */}
@@ -326,7 +326,7 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
             type="submit"
             className="w-full py-4 rounded-xl bg-brand-forest hover:bg-brand-forestHover text-white font-bold text-base shadow-soft hover:shadow-soft-lg flex items-center justify-center gap-3 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-forest group"
           >
-            <span>Send Inquiry on WhatsApp</span>
+            <span>Contact Your Insurance Consultant in Mumbai</span>
             <Send className="w-4 h-4 text-brand-accentYellow group-hover:translate-x-1 transition-transform" />
           </button>
 
