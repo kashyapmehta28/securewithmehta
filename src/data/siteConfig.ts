@@ -62,7 +62,9 @@ export const SITE_CONFIG = {
     // Default number for WhatsApp links (Country code 91, digits only)
     defaultWhatsAppNumber: "919892579563",
     secondaryWhatsAppNumber: "918169659127",
-    email: "kashyapmehta28@gmail.com",
+    email: "info@securewithmehta.com",
+    instagram: "https://www.instagram.com/securewithmehta/",
+    instagramHandle: "@securewithmehta",
     workingHours: "Monday to Saturday: 10:00 AM – 7:30 PM IST",
   },
   policyReview: {
