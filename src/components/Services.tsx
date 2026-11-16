@@ -44,7 +44,7 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService, onExploreAl
           </h2>
           
           <p className="text-base sm:text-lg text-brand-muted leading-relaxed font-normal">
-            Independent guidance from Mehta Associates on motor insurance, commercial insurance, fire insurance, and business protection. Evaluated across all leading insurers in Mumbai and India.
+            Independent guidance from Secure With Mehta on motor insurance, commercial insurance, fire insurance, and business protection. Evaluated across all leading insurers in Mumbai and India.
           </p>
         </div>
 

@@ -24,23 +24,23 @@ export interface FAQItem {
 
 export const SITE_CONFIG = {
   brand: {
-    fullName: "Mehta Associates",
-    secondaryName: "Secure With Mehta",
+    fullName: "Secure With Mehta",
+    secondaryName: "Mehta Associates",
     formerName: "Mehta Associates",
     tagline: "General Insurance Consultancy",
     founder: "Kashyap Mehta",
     role: "General Insurance Consultant & Advisor",
     logo: "/images/logo.png",
-    temporaryWordmark: "MA",
-    temporaryWordmarkSubtext: "Mehta Associates",
-    historyYears: 38,
+    temporaryWordmark: "SWM",
+    temporaryWordmarkSubtext: "Secure With Mehta",
+    historyYears: 40,
     baseLocation: "Mumbai",
     officeLocation: "Mumbai, Maharashtra",
     officeAddressNote: "General Insurance Consultancy based in Mumbai, serving South Mumbai, Western Suburbs, greater Maharashtra, pan-India, and NRIs.",
     reach: "Serving clients across Mumbai (South Mumbai, Masjid Bunder, Andheri, Borivali, Kandivali, Malad, Goregaon), Maharashtra, pan-India, and international NRI insurance inquiries.",
-    transitionNote: "Mehta Associates — Your General Insurance Partner",
-    transitionQuote: "Mehta Associates, led by Kashyap Mehta, is an experienced general insurance consultancy with over 38 years of industry experience. Based in Mumbai, we provide trusted guidance on general insurance solutions for individuals and businesses.",
-    businessDescription: "Mehta Associates, led by Kashyap Mehta, is an experienced general insurance consultancy with over 38 years of industry experience. Based in Mumbai, we provide guidance on general insurance solutions for individuals and businesses, including motor insurance, commercial insurance and other insurance requirements. Our focus is on understanding customer needs and helping them make informed insurance decisions through personalised guidance and professional support.",
+    transitionNote: "Secure With Mehta — Your General Insurance Partner",
+    transitionQuote: "Secure With Mehta, led by Kashyap Mehta, is an experienced general insurance consultancy with over 40 years of industry experience. Based in Mumbai, we provide trusted guidance on general insurance solutions for individuals and businesses.",
+    businessDescription: "Secure With Mehta (formerly known as Mehta Associates), led by Kashyap Mehta, is an experienced general insurance consultancy with over 40 years of industry experience. Based in Mumbai, we provide guidance on general insurance solutions for individuals and businesses, including motor insurance, commercial insurance and other insurance requirements. Our focus is on understanding customer needs and helping them make informed insurance decisions through personalised guidance and professional support.",
   },
   contacts: {
     // Both supplied numbers
@@ -75,15 +75,15 @@ export const SITE_CONFIG = {
     tentativeFeeNote: "Nominal policy survey fee of ₹1,999 (subject to final client confirmation prior to publishing).",
   },
   disclaimers: {
-    insuranceScopeOnly: "Scope Notice: Mehta Associates exclusively provides advisory and facilitation services for General Insurance products. We do not offer mutual funds, loans, stock investments, or non-insurance wealth schemes on this portal.",
-    noClaimsGuarantee: "Claim Advisory Notice: Mehta Associates assists policyholders with claims guidance, documentation, and surveyor coordination. We do not underwrite insurance policies or guarantee claim settlements, which are solely determined by the respective insurer in accordance with policy terms, conditions, and applicable IRDAI regulations.",
+    insuranceScopeOnly: "Scope Notice: Secure With Mehta exclusively provides advisory and facilitation services for General Insurance products. We do not offer mutual funds, loans, stock investments, or non-insurance wealth schemes on this portal.",
+    noClaimsGuarantee: "Claim Advisory Notice: Secure With Mehta assists policyholders with claims guidance, documentation, and surveyor coordination. We do not underwrite insurance policies or guarantee claim settlements, which are solely determined by the respective insurer in accordance with policy terms, conditions, and applicable IRDAI regulations.",
     regulatoryStatus: "Regulatory & Legal Notice: Descriptions of general insurance consultancy and broker/agency services reflect firm history and are subject to applicable IRDAI guidelines.",
   },
   hero: {
     headline: "Trusted General Insurance Consultant in Mumbai",
     taglineQuote: "Protection for What Matters. Guidance You Can Trust.",
     badges: [
-      "38+ Years Experience",
+      "40+ Years Experience",
       "Mumbai & Pan-India",
       "Personalized Guidance",
       "All Major Insurers Evaluated"
@@ -745,12 +745,12 @@ export const POLICY_REVIEW_FEATURES = [
 
 export const FAQS_DATA: FAQItem[] = [
   {
-    question: "What insurance categories does Mehta Associates handle?",
+    question: "What insurance categories does Secure With Mehta handle?",
     answer: "We provide specialized general insurance solutions across 38+ lines including Motor Insurance, Car Insurance, Two Wheeler Insurance, Commercial Insurance for Businesses, Standard Fire & Special Perils, Marine Cargo Transit, and Corporate Liabilities."
   },
   {
     question: "How do I connect with a General Insurance Consultant in Mumbai?",
-    answer: "You can connect directly with Kashyap Mehta at Mehta Associates via WhatsApp or call at 98925 79563 / 81696 59127 for personalized insurance guidance and policy quotes."
+    answer: "You can connect directly with Kashyap Mehta at Secure With Mehta via WhatsApp or call at 98925 79563 / 81696 59127 for personalized insurance guidance and policy quotes."
   },
   {
     question: "What does a General Insurance policy review involve?",
@@ -758,10 +758,10 @@ export const FAQS_DATA: FAQItem[] = [
   },
   {
     question: "Is there a fee for reviewing existing insurance policies?",
-    answer: "Initial general insurance consultations are complimentary. Comprehensive in-depth audits may carry a nominal survey fee, communicated transparently upfront."
+    answer: "Initial general insurance consultations are complimentary. Comprehensive in-depth portfolio audits may carry a nominal survey fee, communicated transparently upfront."
   },
   {
-    question: "How does Mehta Associates assist with motor and commercial claims?",
+    question: "How does Secure With Mehta assist with motor and commercial claims?",
     answer: "We provide complete claim support—assisting with surveyor coordination, cashless garage networks, incident documentation, and insurer follow-ups."
   },
   {
@@ -769,11 +769,11 @@ export const FAQS_DATA: FAQItem[] = [
     answer: "Insurers calculate risk differently based on claim settlement ratios, surveyor turnaround times, garage networks, underwriting rules, and policy add-ons."
   },
   {
-    question: "Can I consult Mehta Associates if I am located outside South Mumbai?",
+    question: "Can I consult Secure With Mehta if I am located outside South Mumbai?",
     answer: "Yes, we actively serve clients across Mumbai (South Mumbai, Masjid Bunder, Andheri, Borivali, Kandivali, Malad, Goregaon), greater Maharashtra, and across India."
   },
   {
-    question: "Does Mehta Associates offer non-insurance investment products?",
-    answer: "No, Mehta Associates specializes exclusively in pure General Insurance advisory to provide conflict-free, client-first protection."
+    question: "Does Secure With Mehta offer non-insurance investment products?",
+    answer: "No, Secure With Mehta specializes exclusively in pure General Insurance advisory to provide conflict-free, client-first protection."
   }
 ];

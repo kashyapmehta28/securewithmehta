@@ -42,14 +42,14 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onAssistanceClick })
               <div className="w-9 h-9 rounded-lg bg-white p-0.5 border border-brand-borderSubtle flex-shrink-0 shadow-soft-sm">
                 <img
                   src="/images/logo.png"
-                  alt="Mehta Associates General Insurance Consultancy"
+                  alt="Secure With Mehta General Insurance Consultancy"
                   className="w-full h-full object-contain"
                 />
               </div>
               <div>
                 <h3 className="text-base font-bold text-brand-dark leading-tight">Kashyap Mehta</h3>
                 <p className="text-xs text-brand-muted">
-                  Mehta Associates <span className="text-[10px] text-brand-forest font-semibold">(General Insurance Consultant)</span>
+                  Secure With Mehta <span className="text-[10px] text-brand-forest font-semibold">(Formerly Mehta Associates)</span>
                 </p>
               </div>
             </div>
@@ -94,7 +94,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onAssistanceClick })
             <div className="inline-flex flex-wrap items-center gap-1.5 xs:gap-2 px-3 py-1.5 rounded-full bg-brand-accentGreen text-brand-forest border border-brand-accentGreenBorder mb-4 sm:mb-6 shadow-soft-sm max-w-full">
               <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse flex-shrink-0" />
               <span className="text-[10px] xs:text-[11px] sm:text-xs font-semibold tracking-wide">
-                <span className="font-bold">Mehta Associates</span> • 38+ Years of General Insurance Advisory in Mumbai
+                <span className="font-bold">Secure With Mehta</span> • 40+ Years of General Insurance Advisory in Mumbai
               </span>
             </div>
 
@@ -147,7 +147,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onAssistanceClick })
 
             {/* 5. SEO Description Paragraph with Primary & Supporting Keywords */}
             <p className="text-sm sm:text-base md:text-lg text-brand-muted leading-relaxed font-normal mb-6 sm:mb-8 max-w-2xl">
-              Providing independent <strong className="text-brand-dark font-semibold">General Insurance Services in Mumbai</strong>. Led by <strong className="text-brand-dark font-semibold">Kashyap Mehta</strong> with over 38 years of experience, Mehta Associates delivers unbiased insurance guidance and solutions for individuals and businesses—including motor, commercial, fire, and business insurance solutions.
+              Providing independent <strong className="text-brand-dark font-semibold">General Insurance Services in Mumbai</strong>. Led by <strong className="text-brand-dark font-semibold">Kashyap Mehta</strong> with over 40 years of experience, Secure With Mehta delivers unbiased insurance guidance and solutions for individuals and businesses—including motor, commercial, fire, and business insurance solutions.
             </p>
 
             {/* Action Buttons */}
@@ -157,7 +157,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onAssistanceClick })
                 onClick={onAssistanceClick}
                 className="w-full sm:w-auto min-h-[48px] inline-flex items-center justify-center gap-2.5 px-6 py-3.5 sm:px-7 sm:py-4 rounded-xl bg-brand-forest hover:bg-brand-forestHover active:bg-brand-forestHover active:scale-[0.98] text-white font-semibold text-sm sm:text-base shadow-soft hover:shadow-soft-lg transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-forest group"
               >
-                <span>Connect with Mehta Associates</span>
+                <span>Connect with Secure With Mehta</span>
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-brand-accentYellow group-hover:translate-x-1 transition-transform" />
               </button>
 

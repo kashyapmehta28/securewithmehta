@@ -40,7 +40,7 @@ export const WhyChooseUs: React.FC = () => {
             className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-accentGreen text-brand-forest border border-brand-accentGreenBorder mb-3 text-xs font-semibold uppercase tracking-wider shadow-soft-sm"
           >
             <Sparkles className="w-3.5 h-3.5 text-brand-forest animate-pulse" />
-            <span>Why Choose Mehta Associates?</span>
+            <span>Why Choose Secure With Mehta?</span>
           </motion.div>
 
           <motion.h2
@@ -50,7 +50,7 @@ export const WhyChooseUs: React.FC = () => {
             transition={{ duration: 0.5 }}
             className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-brand-dark tracking-tight mb-3"
           >
-            Why Choose Mehta Associates for General Insurance?
+            Why Choose Secure With Mehta for General Insurance?
           </motion.h2>
           
           <motion.p
@@ -60,7 +60,7 @@ export const WhyChooseUs: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-xs sm:text-base text-brand-muted font-normal max-w-2xl mx-auto leading-relaxed"
           >
-            Personalized guidance, unbiased advisory across leading insurers, and 38+ years of trusted insurance experience in Mumbai.
+            Personalized guidance, unbiased advisory across leading insurers, and 40+ years of trusted insurance experience in Mumbai.
           </motion.p>
         </div>
 

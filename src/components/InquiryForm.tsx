@@ -97,7 +97,7 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
 
     // Build neatly formatted WhatsApp message
     const formattedMessage = [
-      `*NEW GENERAL INSURANCE INQUIRY — MEHTA ASSOCIATES*`,
+      `*NEW GENERAL INSURANCE INQUIRY — SECURE WITH MEHTA*`,
       `--------------------------------------`,
       `👤 *Name:* ${formData.fullName.trim()}`,
       `📱 *Mobile:* ${formData.mobile.trim()}`,
@@ -106,7 +106,7 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
       `📍 *City / Location:* ${formData.city.trim()}`,
       `📝 *Specific Requirement:* ${formData.requirement.trim()}`,
       `--------------------------------------`,
-      `_Sent via Mehta Associates General Insurance Portal_`,
+      `_Sent via Secure With Mehta General Insurance Portal_`,
     ].join('\n');
 
     const whatsappUrl = `https://wa.me/${SITE_CONFIG.contacts.defaultWhatsAppNumber}?text=${encodeURIComponent(
@@ -149,7 +149,7 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
         </h3>
         
         <p className="text-xs sm:text-sm text-brand-muted mt-1 leading-relaxed">
-          Fill in your details below for personalized general insurance guidance from Mehta Associates in Mumbai. Review and edit before sending.
+          Fill in your details below for personalized general insurance guidance from Secure With Mehta in Mumbai. Review and edit before sending.
         </p>
 
         {/* Selected Service Badge */}

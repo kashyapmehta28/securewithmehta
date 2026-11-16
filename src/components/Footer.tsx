@@ -20,22 +20,22 @@ export const Footer: React.FC = () => {
               <div className="w-12 h-12 rounded-xl bg-white p-1 flex items-center justify-center shadow-soft flex-shrink-0">
                 <img
                   src="/images/logo.png"
-                  alt="Mehta Associates General Insurance Consultancy"
+                  alt="Secure With Mehta General Insurance Consultancy"
                   className="w-full h-full object-contain"
                 />
               </div>
               <div>
                 <div className="text-xl font-bold tracking-tight text-white">
-                  Mehta Associates
+                  Secure With Mehta
                 </div>
                 <div className="text-xs text-white/60">
-                  {SITE_CONFIG.brand.founder} • General Insurance Consultant
+                  {SITE_CONFIG.brand.founder} • Formerly Mehta Associates
                 </div>
               </div>
             </div>
 
             <p className="text-xs text-white/70 leading-relaxed max-w-sm">
-              Providing personalized General Insurance Services in Mumbai backed by over 38 years of trusted heritage. Unbiased motor, commercial, fire, and business insurance solutions.
+              Providing personalized General Insurance Services in Mumbai backed by over 40 years of trusted heritage. Unbiased motor, commercial, fire, and business insurance solutions.
             </p>
 
             <div className="pt-2 text-xs text-white/50 space-y-1">
@@ -57,10 +57,10 @@ export const Footer: React.FC = () => {
                 <a href="#services" className="hover:text-white transition-colors">General Insurance Services in Mumbai</a>
               </li>
               <li>
-                <a href="#about" className="hover:text-white transition-colors">About Mehta Associates</a>
+                <a href="#about" className="hover:text-white transition-colors">About Secure With Mehta</a>
               </li>
               <li>
-                <a href="#why-choose-us" className="hover:text-white transition-colors">Why Choose Mehta Associates?</a>
+                <a href="#why-choose-us" className="hover:text-white transition-colors">Why Choose Secure With Mehta?</a>
               </li>
               <li>
                 <a href="#policy-review" className="hover:text-white transition-colors">Policy Audit & Claims Assistance</a>
@@ -75,7 +75,7 @@ export const Footer: React.FC = () => {
                 <a href="#faqs" className="hover:text-white transition-colors">Frequently Asked Questions</a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-white transition-colors">Connect with Mehta Associates</a>
+                <a href="#contact" className="hover:text-white transition-colors">Connect with Secure With Mehta</a>
               </li>
             </ul>
           </div>

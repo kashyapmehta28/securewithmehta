@@ -178,7 +178,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onSelectService }) => {
               {!logoError ? (
                 <img
                   src="/images/logo.png"
-                  alt="Mehta Associates General Insurance Consultancy"
+                  alt="Secure With Mehta General Insurance Consultancy"
                   className="w-full h-full object-contain transition-transform duration-300"
                   onError={() => setLogoError(true)}
                 />

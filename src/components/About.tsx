@@ -64,14 +64,14 @@ export const About: React.FC = () => {
               {/* Photo filling 100% of column with SEO ALT */}
               <img
                 src="/images/kashyap-mehta-blazer.jpg"
-                alt="Mehta Associates – 38 Years of Insurance Experience"
+                alt="Secure With Mehta – 40+ Years of Insurance Experience"
                 className="absolute inset-0 w-full h-full object-cover object-[50%_12%] transition-transform duration-500 group-hover:scale-[1.02]"
               />
               
               {/* Top-Right Established Badge */}
               <div className="absolute top-3.5 right-3.5 z-10 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-brand-forest text-xs font-bold shadow-soft border border-white/80">
                 <Award className="w-3.5 h-3.5 text-emerald-700" />
-                <span>38+ Years Expertise</span>
+                <span>40+ Years Expertise</span>
               </div>
 
               {/* Gradient overlay for text contrast */}
@@ -84,7 +84,7 @@ export const About: React.FC = () => {
                     Kashyap Mehta
                   </h3>
                   <p className="text-xs text-white/90 font-medium mt-0.5">
-                    Mehta Associates
+                    Secure With Mehta <span className="text-[10px] text-brand-accentYellow font-semibold">(Formerly Mehta Associates)</span>
                   </p>
                 </div>
                 <div className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-black/40 backdrop-blur-md text-white/90 text-[11px] font-semibold border border-white/20 flex-shrink-0">
@@ -101,17 +101,17 @@ export const About: React.FC = () => {
               {/* Top Tag */}
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-accentGreen text-brand-forest border border-brand-accentGreenBorder mb-3 text-xs font-semibold uppercase tracking-wider shadow-soft-sm">
                 <Sparkles className="w-3.5 h-3.5 text-brand-forest" />
-                <span>About Mehta Associates</span>
+                <span>About Secure With Mehta</span>
               </div>
 
               {/* Main H2 Headline (SEO Recommended Heading) */}
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-brand-dark tracking-tight mb-4 leading-tight">
-                About Mehta Associates – Your General Insurance Partner
+                About Secure With Mehta – Your General Insurance Partner
               </h2>
 
               {/* SEO-Friendly Exact Paragraph */}
               <p className="text-sm sm:text-base text-brand-muted leading-relaxed font-normal">
-                Mehta Associates, led by Kashyap Mehta, is an experienced general insurance consultancy with over 38 years of industry experience. Based in Mumbai, we provide guidance on general insurance solutions for individuals and businesses, including motor insurance, commercial insurance and other insurance requirements. Our focus is on understanding customer needs and helping them make informed insurance decisions through personalised guidance and professional support.
+                Secure With Mehta (formerly known as Mehta Associates), led by Kashyap Mehta, is an experienced general insurance consultancy with over 40 years of industry experience. Based in Mumbai, we provide guidance on general insurance solutions for individuals and businesses, including motor insurance, commercial insurance and other insurance requirements. Our focus is on understanding customer needs and helping them make informed insurance decisions through personalised guidance and professional support.
               </p>
 
               {/* Creative One-Line Quote Card */}
@@ -158,10 +158,10 @@ export const About: React.FC = () => {
           <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-8">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-accentGreen text-brand-forest border border-brand-accentGreenBorder mb-2 text-xs font-bold uppercase tracking-wider">
               <Award className="w-3.5 h-3.5 text-emerald-700" />
-              <span>38+ Years of Insurance Experience</span>
+              <span>40+ Years of Insurance Experience</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-dark tracking-tight">
-              38+ Years of Experience in General Insurance
+              40+ Years of Experience in General Insurance
             </h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6">

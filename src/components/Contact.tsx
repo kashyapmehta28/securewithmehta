@@ -25,7 +25,7 @@ export const Contact: React.FC<ContactProps> = ({
             Connect with a General Insurance Consultant in Mumbai
           </h2>
           <p className="mt-3 text-sm sm:text-base text-brand-muted max-w-2xl mx-auto">
-            Get personalized guidance from Kashyap Mehta and Mehta Associates on motor insurance, commercial insurance, fire insurance, and comprehensive business protection.
+            Get personalized guidance from Kashyap Mehta and Secure With Mehta on motor insurance, commercial insurance, fire insurance, and comprehensive business protection.
           </p>
         </div>
 
@@ -41,16 +41,16 @@ export const Contact: React.FC<ContactProps> = ({
                 <div className="w-12 h-12 rounded-xl bg-white p-1 border border-brand-borderSubtle flex items-center justify-center flex-shrink-0 shadow-soft-sm">
                   <img
                     src="/images/logo.png"
-                    alt="Mehta Associates General Insurance Consultancy"
+                    alt="Secure With Mehta General Insurance Consultancy"
                     className="w-full h-full object-contain"
                   />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-brand-dark">
-                    Mehta Associates
+                    Secure With Mehta
                   </h3>
                   <p className="text-xs text-brand-muted">
-                    {SITE_CONFIG.brand.founder} • General Insurance Consultant
+                    {SITE_CONFIG.brand.founder} • Formerly Mehta Associates
                   </p>
                 </div>
               </div>

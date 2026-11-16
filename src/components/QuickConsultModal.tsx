@@ -73,7 +73,7 @@ export const QuickConsultModal: React.FC = () => {
     setError('');
 
     // Format WhatsApp message
-    const message = `Hello Kashyap ji, My name is ${name.trim()} (Phone: ${cleanPhone}). I would like to consult regarding ${policy} with Mehta Associates. Please guide me with unbiased options.`;
+    const message = `Hello Kashyap ji, My name is ${name.trim()} (Phone: ${cleanPhone}). I would like to consult regarding ${policy} with Secure With Mehta. Please guide me with unbiased options.`;
     const whatsappUrl = `https://wa.me/${SITE_CONFIG.contacts.defaultWhatsAppNumber}?text=${encodeURIComponent(message)}`;
 
     // Open WhatsApp

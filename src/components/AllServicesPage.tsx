@@ -80,7 +80,7 @@ export const AllServicesPage: React.FC<AllServicesPageProps> = ({ onBack, onSele
               <div className="flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-white p-1 shadow-soft group-hover:scale-105 transition-all overflow-hidden border border-brand-borderSubtle">
                 <img
                   src="/images/logo.png"
-                  alt="Mehta Associates General Insurance Consultancy"
+                  alt="Secure With Mehta General Insurance Consultancy"
                   className="w-full h-full object-contain"
                 />
               </div>
@@ -146,7 +146,7 @@ export const AllServicesPage: React.FC<AllServicesPageProps> = ({ onBack, onSele
           </h1>
 
           <p className="text-base sm:text-lg text-brand-muted leading-relaxed font-normal">
-            Independent guidance from Mehta Associates across Motor, Commercial, Fire, Engineering, Marine Cargo, and Corporate Liabilities. Evaluated objectively to protect your assets across Mumbai and India.
+            Independent guidance from Secure With Mehta across Motor, Commercial, Fire, Engineering, Marine Cargo, and Corporate Liabilities. Evaluated objectively to protect your assets across Mumbai and India.
           </p>
         </div>
 
