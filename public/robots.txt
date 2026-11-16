@@ -1,0 +1,13 @@
+# Robots.txt for Secure With Mehta
+# Website: https://securewithmehta.com
+# Founder & Consultant: Kashyap Mehta
+
+User-agent: *
+Allow: /
+Disallow:
+
+# Host
+Host: https://securewithmehta.com
+
+# Sitemaps
+Sitemap: https://securewithmehta.com/sitemap.xml
