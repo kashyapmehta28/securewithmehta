@@ -66,6 +66,8 @@ export const SITE_CONFIG = {
     email: "info@securewithmehta.com",
     instagram: "https://www.instagram.com/securewithmehta/",
     instagramHandle: "@securewithmehta",
+    facebook: "https://www.facebook.com/profile.php?id=61596577298378",
+    facebookHandle: "Secure With Mehta",
     workingHours: "Monday to Saturday: 10:00 AM – 7:30 PM IST",
   },
   policyReview: {

@@ -43,9 +43,9 @@ export const FloatingContactButtons: React.FC = () => {
         </div>
       )}
 
-      {/* Bottom Left: Fixed Phone Call Button (Direct Call) */}
+      {/* Bottom Left: Fixed Phone Call Button (Direct Call) + Facebook */}
       <div
-        className="fixed left-3.5 sm:left-6 z-40 touch-manipulation"
+        className="fixed left-3.5 sm:left-6 z-40 touch-manipulation flex items-center gap-2 sm:gap-2.5"
         style={{ bottom: 'max(1rem, calc(env(safe-area-inset-bottom, 0px) + 0.75rem))' }}
       >
         <a
@@ -58,6 +58,20 @@ export const FloatingContactButtons: React.FC = () => {
             <Phone className="w-3.5 h-3.5" />
           </div>
           <span className="text-xs font-bold inline">Call Us</span>
+        </a>
+
+        {/* Facebook Quick Action Button */}
+        <a
+          href={SITE_CONFIG.contacts.facebook}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 min-h-[44px] rounded-full bg-[#1877F2] hover:bg-[#166fe5] text-white shadow-soft-lg hover:shadow-soft-xl hover:scale-105 active:scale-95 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#1877F2] group"
+          aria-label="Follow Secure With Mehta on Facebook"
+          title="Follow on Facebook"
+        >
+          <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
         </a>
       </div>
 
